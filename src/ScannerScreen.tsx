@@ -19,7 +19,7 @@ interface State {
   scannedText: string
 }
 
-export class BarCodeScannerScreen extends React.Component<{}, State> {
+export class ScannerScreen extends React.Component<{}, State> {
   constructor(props: {}, context?: any) {
     super(props, context)
 
