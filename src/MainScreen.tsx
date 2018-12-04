@@ -6,7 +6,7 @@ import { ScrollView } from 'react-native'
 import { Text } from 'react-native'
 
 interface State {
-  totalAmount: number
+  walletAmount: number
 }
 
 export class MainScreen extends Component<NavigationScreenProps, State> {
@@ -14,7 +14,7 @@ export class MainScreen extends Component<NavigationScreenProps, State> {
     super(props, context)
 
     this.state = {
-      totalAmount: 0
+      walletAmount: 0
     }
   }
 
