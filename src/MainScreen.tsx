@@ -4,29 +4,9 @@ import { Component } from 'react'
 import { NavigationScreenProps } from 'react-navigation'
 import { ScrollView } from 'react-native'
 
-class DestinationAndTitle {
-  constructor(
-    destination: string,
-    title?: string
-  ) {
-    this.destination = destination
-
-    if (title === undefined) {
-      this.title = destination
-    }
-    else {
-      this.title = title
-    }
-  }
-
-  public destination: string
-  public title: string
-}
-
-// tslint:disable-next-line:max-classes-per-file
 export class MainScreen extends Component<NavigationScreenProps> {
   public static navigationOptions = {
-    title: 'Home'
+    title: 'Skoleglæde.nu pung'
   }
 
   public render() {
@@ -37,18 +17,11 @@ export class MainScreen extends Component<NavigationScreenProps> {
           flex: 1
         }}
       >
-        {this.destinationAndTitlePairs.map(destinationAndTitle =>
-          <Button
-            key={destinationAndTitle.destination}
-            onPress={() => this.props.navigation.navigate(destinationAndTitle.destination)}
-            title={destinationAndTitle.title}
-          />
-        )}
+        <Button
+          onPress={() => this.props.navigation.navigate('BarCodeScanner')}
+          title={'Scan QR kode'}
+        />
       </ScrollView>
     )
   }
-
-  private destinationAndTitlePairs: Array<DestinationAndTitle> = [
-    new DestinationAndTitle('BarCodeScanner')
-  ]
 }
