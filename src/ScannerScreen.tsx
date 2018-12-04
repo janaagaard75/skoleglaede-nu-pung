@@ -105,7 +105,7 @@ export class ScannerScreen extends React.Component<NavigationScreenProps, State>
     // TODO: Figure out how to perform the action.
 
     // TODO: Navigate back - the code below doesn't work.
-    this.props.navigation.goBack()
+    this.props.navigation.goBack(undefined)
   }
 
   private handleBarCodeScanned = ({ type, data }: any) => {
