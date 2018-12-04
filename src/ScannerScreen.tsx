@@ -49,6 +49,7 @@ export class ScannerScreen extends React.Component<NavigationScreenProps, State>
   }
 
   public render() {
+    // TODO: Is it necessary to use a switch to get an exhaustive check on state.cameraPermission?
     switch (this.state.cameraPermission)
     {
       case PermissionState.Unknown:
