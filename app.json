@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "Expo and TypeScript",
-    "description": "Showcase of an Expo app coded in TypeScript.",
-    "slug": "expo-and-typescript",
+    "name": "Skoleglæde.nu Pung",
+    "description": "Game wallet app for Skoleglæde.nu.",
+    "slug": "skoleglaede-nu-pung",
     "privacy": "public",
     "sdkVersion": "31.0.0",
     "version": "1.0.0",
@@ -22,6 +22,7 @@
     },
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "githubUrl": "https://github.com/janaagaard75/skoleglaede-nu-pung"
   }
 }
