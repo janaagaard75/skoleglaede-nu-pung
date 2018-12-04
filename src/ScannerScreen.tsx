@@ -30,7 +30,7 @@ export class ScannerScreen extends React.Component<{}, State> {
   }
 
   public static navigationOptions = {
-    title: 'BarCodeScanner'
+    title: 'Scan QR kode'
   }
 
   public async componentDidMount() {
