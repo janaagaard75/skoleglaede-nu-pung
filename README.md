@@ -6,7 +6,7 @@ Wallet with virtual money for Skoleglæde.nu.
 
 Install `expo-cli` globally.
 
-    # Install expo-cli globally using Yarn.
+    # Install expo-cli globally. Here done using Yarn - using npm is also possible.
     yarn global add expo-cli
 
 ## Running the App
