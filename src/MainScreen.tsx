@@ -5,6 +5,8 @@ import { NavigationScreenProps } from 'react-navigation'
 import { ScrollView } from 'react-native'
 import { Text } from 'react-native'
 
+import { Formatter } from './Formatter'
+
 interface State {
   walletAmount: number
 }
@@ -38,7 +40,7 @@ export class MainScreen extends Component<NavigationScreenProps, State> {
             textAlign: 'center'
           }}
         >
-          {MainScreen.formatAsCurrency(this.state.totalAmount)}
+          {Formatter.formatAsCurrency(this.state.walletAmount)}
         </Text>
         <Button
           onPress={() => this.props.navigation.navigate('BarCodeScanner')}
@@ -46,9 +48,5 @@ export class MainScreen extends Component<NavigationScreenProps, State> {
         />
       </ScrollView>
     )
-  }
-
-  private static formatAsCurrency(input: number): string {
-    return Intl.NumberFormat('da-DK', { style: 'currency', currency: 'DKK' }).format(input)
   }
 }
