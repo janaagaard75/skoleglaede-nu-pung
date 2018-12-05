@@ -21,7 +21,6 @@ If you're on a Mac and have Xcode installed, you can run the app using the iOS S
 
 ## To Do
 
-- Skoleglæde.nu logos
 - Slide to confirm
 - Better layout
   - Margins
