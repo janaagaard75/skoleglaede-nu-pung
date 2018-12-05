@@ -28,4 +28,5 @@ If you're on a Mac and have Xcode installed, you can run the app using the iOS S
   - Text sizes
   - Square camera lens
 - Persist the amount when the app is restarted
+- Actual hash check
 - Persist the amount when the app is updated
