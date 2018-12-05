@@ -1,5 +1,5 @@
 import { ActionType } from './ActionType'
-import { Formatter } from './Formatter'
+import { Formatter } from '../Formatter'
 
 export abstract class Action {
   constructor(

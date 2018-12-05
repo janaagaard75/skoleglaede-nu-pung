@@ -1,5 +1,5 @@
-import { Action } from './Action'
-import { ActionType } from './ActionType'
+import { Action } from './actions/Action'
+import { ActionType } from './actions/ActionType'
 
 export class Wallet {
   private static _amount = 0

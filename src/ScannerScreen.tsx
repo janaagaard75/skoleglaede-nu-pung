@@ -7,12 +7,10 @@ import { StyleSheet } from 'react-native'
 import { Text } from 'react-native'
 import { View } from 'react-native'
 
-import { Action } from './Action'
-import { ActionType } from './ActionType'
-import { AddAction } from './AddAction'
-import { Formatter } from './Formatter'
-import { SetAction } from './SetAction'
-import { SubtractAction } from './SubtractAction'
+import { Action } from './actions/Action'
+import { AddAction } from './actions/AddAction'
+import { SetAction } from './actions/SetAction'
+import { SubtractAction } from './actions/SubtractAction'
 import { Wallet } from './Wallet'
 
 // The type definitions for BarCodeScanner are unfortunately not correct.
