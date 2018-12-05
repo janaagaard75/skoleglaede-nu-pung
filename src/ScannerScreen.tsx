@@ -50,52 +50,45 @@ export class ScannerScreen extends React.Component<NavigationScreenProps, State>
   }
 
   public render() {
-    // TODO: Is it necessary to use a switch to get an exhaustive check on state.cameraPermission?
-    switch (this.state.cameraPermission)
-    {
-      case PermissionState.Unknown:
-        return <Text>Requesting for camera permission.</Text>
-
-      case PermissionState.Denied:
-        return <Text>No access to the camera.</Text>
-
-      case PermissionState.Granted:
-        return (
-          <View style={{ flex: 1 }}>
-            <View style={{ flex: 1 }}>
-              <UntypedBarCodeScanner
-                barCodeTypes={[BarCodeScanner.Constants.BarCodeType.qr]}
-                onBarCodeScanned={this.handleBarCodeScanned}
-                style={StyleSheet.absoluteFill}
-              />
-            </View>
-            <Text
-              style={{
-                fontSize: 20,
-                marginBottom: 10,
-                marginTop: 10
-              }}
-            >
-              {this.getText(this.state.currentAction)}
-            </Text>
-            <View
-              style={{
-                marginBottom: 20
-              }}
-            >
-              <Button
-                onPress={() => this.okButtonPressed()}
-                disabled={this.state.currentAction === undefined}
-                title="OK"
-              />
-            </View>
-          </View>
-        )
-
-      default:
-        const _exhaustiveCheck: never = this.state.cameraPermission
-        return _exhaustiveCheck
+    if (this.state.cameraPermission === PermissionState.Unknown) {
+      return <Text>Requesting for camera permission.</Text>
     }
+
+    if (this.state.cameraPermission === PermissionState.Denied) {
+      return <Text>No access to the camera.</Text>
+    }
+
+    return (
+      <View style={{ flex: 1 }}>
+        <View style={{ flex: 1 }}>
+          <UntypedBarCodeScanner
+            barCodeTypes={[BarCodeScanner.Constants.BarCodeType.qr]}
+            onBarCodeScanned={this.handleBarCodeScanned}
+            style={StyleSheet.absoluteFill}
+          />
+        </View>
+        <Text
+          style={{
+            fontSize: 20,
+            marginBottom: 10,
+            marginTop: 10
+          }}
+        >
+          {this.getText(this.state.currentAction)}
+        </Text>
+        <View
+          style={{
+            marginBottom: 20
+          }}
+        >
+          <Button
+            onPress={() => this.okButtonPressed()}
+            disabled={this.state.currentAction === undefined}
+            title="OK"
+          />
+        </View>
+      </View>
+    )
   }
 
   private okButtonPressed() {
