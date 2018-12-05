@@ -8,10 +8,33 @@ export default createStackNavigator({
   Main: {
     screen: MainScreen,
     navigationOptions: () => ({
-      headerBackTitle: 'Tilbage'
+      headerBackTitle: 'Tilbage',
+      headerTitleStyle: {
+        color: '#fff'
+      },
+      headerStyle: {
+        backgroundColor: '#46a096',
+        borderBottomColor: '#387f77'
+      }
     })
   },
   BarCodeScanner: {
-    screen: ScannerScreen
+    screen: ScannerScreen,
+    navigationOptions: () => ({
+      headerBackTitleStyle: {
+        color: '#fff'
+      },
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+        color: '#fff'
+      },
+      headerStyle: {
+        backgroundColor: '#46a096',
+        borderBottomColor: '#387f77'
+      },
+      cardStyle: {
+        backgroundColor: '#f00'
+      }
+    })
   }
 })
