@@ -44,7 +44,7 @@ export class MainScreen extends Component<NavigationScreenProps, State> {
         </Text>
         <Button
           onPress={() => this.props.navigation.navigate('BarCodeScanner')}
-          title={'Scan QR kode'}
+          title={'Scan QR-kode'}
         />
       </ScrollView>
     )

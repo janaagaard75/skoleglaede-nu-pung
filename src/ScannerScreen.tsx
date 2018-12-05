@@ -38,7 +38,7 @@ export class ScannerScreen extends React.Component<NavigationScreenProps, State>
   }
 
   public static navigationOptions = {
-    title: 'Scan QR kode'
+    title: 'Scan QR-kode'
   }
 
   public async componentDidMount() {
@@ -155,10 +155,10 @@ export class ScannerScreen extends React.Component<NavigationScreenProps, State>
   private getText(action: Action | undefined): string {
     if (action === undefined) {
       if (this.state.codeScanned) {
-        return 'QR koden er ikke accepteret.'
+        return 'QR-koden er ikke accepteret.'
       }
 
-      return 'Scan en QR kode.'
+      return 'Scan en QR-kode.'
     }
 
     const formattedAmount = Formatter.formatAsCurrency(action.amount)
