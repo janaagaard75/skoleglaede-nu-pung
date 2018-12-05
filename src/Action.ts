@@ -1,6 +1,6 @@
 import { ActionType } from './ActionType'
 
-export class Action {
+export abstract class Action {
   constructor(
     type: ActionType,
     amount: number

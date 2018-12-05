@@ -9,7 +9,10 @@ import { View } from 'react-native'
 
 import { Action } from './Action'
 import { ActionType } from './ActionType'
+import { AddAction } from './AddAction'
 import { Formatter } from './Formatter'
+import { SetAction } from './SetAction'
+import { SubtractAction } from './SubtractAction'
 import { Wallet } from './Wallet'
 
 // The type definitions for BarCodeScanner are unfortunately not correct.
@@ -138,13 +141,13 @@ export class ScannerScreen extends React.Component<NavigationScreenProps, State>
     const firstLetter = actionString.substring(0, 1)
     switch (firstLetter) {
       case '+':
-        return new Action(ActionType.Add, amount)
+        return new AddAction(amount)
 
       case '-':
-        return new Action(ActionType.Remove, amount)
+        return new SubtractAction(amount)
 
       case '=':
-        return new Action(ActionType.Set, amount)
+        return new SetAction(amount)
     }
 
     return undefined
