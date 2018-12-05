@@ -153,7 +153,6 @@ export class ScannerScreen extends React.Component<NavigationScreenProps, State>
     return undefined
   }
 
-  // TOOD: Move to Action class.
   private getText(action: Action | undefined): string {
     if (action === undefined) {
       if (this.state.codeScanned) {
@@ -163,20 +162,6 @@ export class ScannerScreen extends React.Component<NavigationScreenProps, State>
       return 'Scan en QR-kode.'
     }
 
-    const formattedAmount = Formatter.formatAsCurrency(action.amount)
-
-    switch (action.type) {
-      case ActionType.Add:
-        return `Tilføj ${formattedAmount}?`
-
-      case ActionType.Subtract:
-        return `Fratræk ${formattedAmount}?`
-
-      case ActionType.Set:
-        return `Nultil til ${formattedAmount}?`
-
-      default:
-        throw new Error(`The action '${action.type}' is not accepted. The amount is ${formattedAmount}.`)
-    }
+    return action.text
   }
 }
