@@ -83,9 +83,9 @@ export class ScannerScreen extends React.Component<NavigationScreenProps, State>
               }}
             >
               <Button
-                onPress={() => this.okButtonPressed}
+                onPress={() => this.okButtonPressed()}
                 disabled={this.state.currentAction === undefined}
-                title={'OK'}
+                title="OK"
               />
             </View>
           </View>
@@ -104,7 +104,6 @@ export class ScannerScreen extends React.Component<NavigationScreenProps, State>
 
     // TODO: Figure out how to perform the action.
 
-    // TODO: Navigate back - the code below doesn't work.
     this.props.navigation.goBack(undefined)
   }
 
