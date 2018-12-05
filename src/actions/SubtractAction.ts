@@ -7,4 +7,8 @@ export class SubtractAction extends Action {
   ) {
     super(ActionType.Subtract, amountToSubtract)
   }
+
+  public get text(): string {
+    return `Fratræk ${this.formattedAmount}?`
+  }
 }

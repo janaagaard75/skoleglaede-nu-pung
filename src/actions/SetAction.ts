@@ -7,4 +7,8 @@ export class SetAction extends Action {
   ) {
     super(ActionType.Set, amountToSetTo)
   }
+
+  public get text(): string {
+    return `Nultil til ${this.formattedAmount}?`
+  }
 }

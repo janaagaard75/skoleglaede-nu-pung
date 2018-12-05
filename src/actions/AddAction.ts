@@ -7,4 +7,8 @@ export class AddAction extends Action {
   ) {
     super(ActionType.Add, amountToAdd)
   }
+
+  public get text(): string {
+    return `Tilføj ${this.formattedAmount}?`
+  }
 }
