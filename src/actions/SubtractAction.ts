@@ -1,14 +1,11 @@
 import { Action } from './Action'
-import { ActionType } from './ActionType'
 
 export class SubtractAction extends Action {
-  constructor(
-    amountToSubtract: number
-  ) {
-    super(ActionType.Subtract, amountToSubtract)
-  }
-
   public get text(): string {
     return `Fratræk ${this.formattedAmount}?`
+  }
+
+  public performAction(previousAmount: number): number {
+    return previousAmount -= this.amount
   }
 }

@@ -8,9 +8,7 @@ import { Text } from 'react-native'
 import { View } from 'react-native'
 
 import { Action } from './actions/Action'
-import { AddAction } from './actions/AddAction'
-import { SetAction } from './actions/SetAction'
-import { SubtractAction } from './actions/SubtractAction'
+import { ActionHelper } from './actions/ActionHelper'
 import { Wallet } from './Wallet'
 
 // The type definitions for BarCodeScanner are unfortunately not correct.
@@ -108,47 +106,11 @@ export class ScannerScreen extends React.Component<NavigationScreenProps, State>
   }
 
   private handleBarCodeScanned = ({ type, data }: any) => {
-    const action = this.getAction(data)
+    const action = ActionHelper.parseCodeValue(data)
     this.setState({
       codeScanned: true,
       currentAction: action
     })
-  }
-
-  // TODO: Move to Action class.
-  private getAction(code: string): Action | undefined {
-    const actionAndHash = code.split('&')
-
-    if (actionAndHash.length !== 2) {
-      return undefined
-    }
-
-    const actionString = actionAndHash[0]
-    const hash = actionAndHash[1]
-
-    // TODO: Implement actual hash check.
-    if (hash !== '1234567890') {
-      return undefined
-    }
-
-    const amount = parseInt(actionString.substring(1), 10)
-    if (isNaN(amount)) {
-      return undefined
-    }
-
-    const firstLetter = actionString.substring(0, 1)
-    switch (firstLetter) {
-      case '+':
-        return new AddAction(amount)
-
-      case '-':
-        return new SubtractAction(amount)
-
-      case '=':
-        return new SetAction(amount)
-    }
-
-    return undefined
   }
 
   private getText(action: Action | undefined): string {
