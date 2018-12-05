@@ -102,7 +102,7 @@ export class ScannerScreen extends React.Component<NavigationScreenProps, State>
       currentAction: undefined
     })
 
-    this.props.navigation.goBack(undefined)
+    this.props.navigation.goBack()
   }
 
   private handleBarCodeScanned = ({ type, data }: any) => {
