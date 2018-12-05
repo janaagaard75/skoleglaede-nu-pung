@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Skoleglæde.nu Pung",
-    "description": "Game wallet app for Skoleglæde.nu.",
+    "description": "Wallet app for a game for Skoleglæde.nu.",
     "slug": "skoleglaede-nu-pung",
     "privacy": "public",
     "sdkVersion": "31.0.0",
