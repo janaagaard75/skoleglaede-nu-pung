@@ -10,6 +10,7 @@ import { View } from 'react-native'
 import { Action } from './Action'
 import { ActionType } from './ActionType'
 import { Formatter } from './Formatter'
+import { Wallet } from './Wallet'
 
 // The type definitions for BarCodeScanner are unfortunately not correct.
 const UntypedBarCodeScanner = BarCodeScanner as any
@@ -102,7 +103,12 @@ export class ScannerScreen extends React.Component<NavigationScreenProps, State>
       throw new Error('OK button pressed, but currentAction is undefined.')
     }
 
-    // TODO: Figure out how to perform the action.
+    Wallet.performAction(this.state.currentAction)
+
+    this.setState({
+      codeScanned: false,
+      currentAction: undefined
+    })
 
     this.props.navigation.goBack(undefined)
   }

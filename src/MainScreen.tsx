@@ -6,6 +6,7 @@ import { ScrollView } from 'react-native'
 import { Text } from 'react-native'
 
 import { Formatter } from './Formatter'
+import { Wallet } from './Wallet'
 
 interface State {
   walletAmount: number
@@ -16,8 +17,16 @@ export class MainScreen extends Component<NavigationScreenProps, State> {
     super(props, context)
 
     this.state = {
-      walletAmount: 0
+      walletAmount: Wallet.amount
     }
+
+    this.props.navigation.addListener('willFocus',
+      () => {
+        this.setState({
+          walletAmount: Wallet.amount
+        })
+      }
+    )
   }
 
   public static navigationOptions = {
