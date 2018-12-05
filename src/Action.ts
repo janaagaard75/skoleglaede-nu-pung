@@ -9,6 +9,6 @@ export abstract class Action {
     this.amount = amount
   }
 
-  public amount: number
-  public type: ActionType
+  public readonly amount: number
+  public readonly type: ActionType
 }
