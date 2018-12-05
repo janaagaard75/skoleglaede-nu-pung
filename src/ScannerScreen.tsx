@@ -16,7 +16,7 @@ import { Wallet } from './Wallet'
 const UntypedBarCodeScanner = BarCodeScanner as any
 
 enum PermissionState {
-  Unknown,
+  Requesting,
   Denied,
   Granted
 }
@@ -32,7 +32,7 @@ export class ScannerScreen extends React.Component<NavigationScreenProps, State>
     super(props, context)
 
     this.state = {
-      cameraPermission: PermissionState.Unknown,
+      cameraPermission: PermissionState.Requesting,
       codeScanned: false,
       currentAction: undefined
     }
@@ -50,7 +50,7 @@ export class ScannerScreen extends React.Component<NavigationScreenProps, State>
   }
 
   public render() {
-    if (this.state.cameraPermission === PermissionState.Unknown) {
+    if (this.state.cameraPermission === PermissionState.Requesting) {
       return <Text>Requesting for camera permission.</Text>
     }
 
