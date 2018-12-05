@@ -14,7 +14,7 @@ export class Wallet {
         this._amount += action.amount
         break
 
-      case ActionType.Remove:
+      case ActionType.Subtract:
         this._amount -= action.amount
         break
 

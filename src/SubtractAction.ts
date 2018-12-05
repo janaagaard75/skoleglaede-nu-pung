@@ -5,6 +5,6 @@ export class SubtractAction extends Action {
   constructor(
     amountToSubtract: number
   ) {
-    super(ActionType.Remove, amountToSubtract)
+    super(ActionType.Subtract, amountToSubtract)
   }
 }

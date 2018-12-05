@@ -169,7 +169,7 @@ export class ScannerScreen extends React.Component<NavigationScreenProps, State>
       case ActionType.Add:
         return `Tilføj ${formattedAmount}?`
 
-      case ActionType.Remove:
+      case ActionType.Subtract:
         return `Fratræk ${formattedAmount}?`
 
       case ActionType.Set:
