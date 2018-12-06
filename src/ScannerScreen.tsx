@@ -97,7 +97,7 @@ export class ScannerScreen extends React.Component<NavigationScreenProps, State>
         </Text>
         <View
           style={{
-            marginBottom: 20,
+            marginBottom: 30,
             marginTop: 10
           }}
         >

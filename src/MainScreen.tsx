@@ -61,7 +61,7 @@ export class MainScreen extends Component<NavigationScreenProps, State> {
         </View>
         <View
           style={{
-            marginBottom: 10,
+            marginBottom: 30,
             marginTop: 10
           }}
         >
