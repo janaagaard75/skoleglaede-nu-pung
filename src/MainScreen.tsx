@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Button } from 'react-native'
 import { Component } from 'react'
+import { Dimensions } from 'react-native'
 import { NavigationScreenProps } from 'react-navigation'
 import { Text } from 'react-native'
 import { View } from 'react-native'
@@ -10,6 +11,7 @@ import { Wallet } from './Wallet'
 
 interface State {
   walletAmount: number
+  windowWidth: number
 }
 
 export class MainScreen extends Component<NavigationScreenProps, State> {
@@ -17,7 +19,8 @@ export class MainScreen extends Component<NavigationScreenProps, State> {
     super(props, context)
 
     this.state = {
-      walletAmount: Wallet.amount
+      walletAmount: Wallet.amount,
+      windowWidth: Dimensions.get('window').width
     }
 
     this.props.navigation.addListener('willFocus',
@@ -41,20 +44,32 @@ export class MainScreen extends Component<NavigationScreenProps, State> {
           flex: 1
         }}
       >
-        <Text
+        <View
           style={{
-            fontSize: 30,
-            marginBottom: 20,
-            marginTop: 30,
-            textAlign: 'center'
+            flex: 1,
+            justifyContent: 'center'
           }}
         >
-          {Formatter.formatAsCurrency(this.state.walletAmount)}
-        </Text>
-        <Button
-          onPress={() => this.props.navigation.navigate('BarCodeScanner')}
-          title={'Scan QR-kode'}
-        />
+          <Text
+            style={{
+              fontSize: 0.13 * this.state.windowWidth,
+              textAlign: 'center'
+            }}
+          >
+            {Formatter.formatAsCurrency(this.state.walletAmount)}
+          </Text>
+        </View>
+        <View
+          style={{
+            marginBottom: 10,
+            marginTop: 10
+          }}
+        >
+          <Button
+            onPress={() => this.props.navigation.navigate('BarCodeScanner')}
+            title={'Scan QR-kode'}
+          />
+        </View>
       </View>
     )
   }
