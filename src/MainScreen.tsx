@@ -2,8 +2,8 @@ import * as React from 'react'
 import { Button } from 'react-native'
 import { Component } from 'react'
 import { NavigationScreenProps } from 'react-navigation'
-import { ScrollView } from 'react-native'
 import { Text } from 'react-native'
+import { View } from 'react-native'
 
 import { Formatter } from './Formatter'
 import { Wallet } from './Wallet'
@@ -35,7 +35,7 @@ export class MainScreen extends Component<NavigationScreenProps, State> {
 
   public render() {
     return (
-      <ScrollView
+      <View
         style={{
           backgroundColor: '#fff',
           flex: 1
@@ -55,7 +55,7 @@ export class MainScreen extends Component<NavigationScreenProps, State> {
           onPress={() => this.props.navigation.navigate('BarCodeScanner')}
           title={'Scan QR-kode'}
         />
-      </ScrollView>
+      </View>
     )
   }
 }
