@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { BarCodeScanner } from 'expo'
 import { Button } from 'react-native'
+import { Dimensions } from 'react-native'
 import { NavigationScreenProps } from 'react-navigation'
 import { Permissions } from 'expo'
 import { StyleSheet } from 'react-native'
@@ -24,6 +25,7 @@ interface State {
   cameraPermission: PermissionState
   codeScanned: boolean
   currentAction: Action | undefined
+  windowWidth: number
 }
 
 export class ScannerScreen extends React.Component<NavigationScreenProps, State> {
@@ -33,7 +35,8 @@ export class ScannerScreen extends React.Component<NavigationScreenProps, State>
     this.state = {
       cameraPermission: PermissionState.Requesting,
       codeScanned: false,
-      currentAction: undefined
+      currentAction: undefined,
+      windowWidth: Dimensions.get('window').width
     }
   }
 
@@ -57,27 +60,45 @@ export class ScannerScreen extends React.Component<NavigationScreenProps, State>
       return <Text>No access to the camera.</Text>
     }
 
+    const floatViewfinderSize = 0.7 * this.state.windowWidth
+    const roundedViewfinderSize = 2 * Math.round(floatViewfinderSize / 2)
+
     return (
       <View style={{ flex: 1 }}>
-        <View style={{ flex: 1 }}>
-          <UntypedBarCodeScanner
-            barCodeTypes={[BarCodeScanner.Constants.BarCodeType.qr]}
-            onBarCodeScanned={this.handleBarCodeScanned}
-            style={StyleSheet.absoluteFill}
-          />
+        <View
+          style={{
+            alignItems: 'center',
+            flex: 1,
+            justifyContent: 'center'
+          }}
+        >
+          <View
+            style={{
+              height: roundedViewfinderSize,
+              width: roundedViewfinderSize
+            }}
+          >
+            <UntypedBarCodeScanner
+              barCodeTypes={[BarCodeScanner.Constants.BarCodeType.qr]}
+              onBarCodeScanned={this.handleBarCodeScanned}
+              style={StyleSheet.absoluteFill}
+            />
+          </View>
         </View>
         <Text
           style={{
             fontSize: 20,
             marginBottom: 10,
-            marginTop: 10
+            marginTop: 10,
+            textAlign: 'center'
           }}
         >
           {this.getText(this.state.currentAction)}
         </Text>
         <View
           style={{
-            marginBottom: 20
+            marginBottom: 20,
+            marginTop: 10
           }}
         >
           <Button
