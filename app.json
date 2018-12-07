@@ -14,14 +14,18 @@
       "image": "./assets/splash.png",
       "resizeMode": "contain"
     },
+    "android": {
+      "package": "nu.skoleglaede.pung"
+    },
+    "ios": {
+      "bundleIdentifier": "nu.skoleglaede.pung",
+      "supportsTablet": true
+    },
     "packagerOpts": {
       "assetExts": [
         "ttf",
         "mp4"
       ]
-    },
-    "ios": {
-      "supportsTablet": true
     },
     "githubUrl": "https://github.com/janaagaard75/skoleglaede-nu-pung"
   }
