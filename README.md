@@ -22,10 +22,15 @@ If you're on a Mac and have Xcode installed, you can run the app using the iOS S
 ## To Do
 
 - Slide to confirm
-- Better layout
-  - Margins
-  - Text sizes
-  - Square camera lens
-- Persist the amount when the app is restarted
+- Ability to put amount in bank
+  - Both amounts on the front page ("konto" and "opsparing")
+  - Icons: Credit card and bank
+  - 500/1000/2000
+- Reset button
+  - 4000 to start with
+  - No need for a reser QR code
+- Persist the state when the app is restarted
 - Actual hash check
-- Persist the amount when the app is updated
+- TestFlight.
+- How is this done on Android?
+- Persist the state when the app is updated(?)
