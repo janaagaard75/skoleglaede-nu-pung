@@ -30,7 +30,9 @@ If you're on a Mac and have Xcode installed, you can run the app using the iOS S
   - 4000 to start with
   - No need for a reser QR code
 - Persist the state when the app is restarted
+- Buttons that look like the ones on Skoleglæde.nu
 - Actual hash check
-- TestFlight.
-- How is this done on Android?
+- Sound effects
+- TestFlight
+- Equivalent for TestFlight on Android
 - Persist the state when the app is updated(?)
