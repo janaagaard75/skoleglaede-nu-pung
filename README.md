@@ -33,6 +33,9 @@ If you're on a Mac and have Xcode installed, you can run the app using the iOS S
 - Buttons that look like the ones on Skoleglæde.nu
 - Actual hash check
 - Sound effects
+- Animate amounts
+  - Slide up and down when adding or subtracting
+  - Fade out and in when resetting
 - TestFlight
 - Equivalent for TestFlight on Android
 - Persist the state when the app is updated(?)
