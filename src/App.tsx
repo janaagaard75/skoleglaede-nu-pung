@@ -2,9 +2,10 @@ import { createStackNavigator } from "react-navigation"
 
 import { MainScreen } from "./MainScreen"
 import { ScannerScreen } from "./ScannerScreen"
+import { TransferScreen } from "./TranferScreen"
 
 export default createStackNavigator({
-  Main: {
+  MainScreen: {
     navigationOptions: () => ({
       headerBackTitle: "Tilbage",
       headerStyle: {
@@ -18,7 +19,7 @@ export default createStackNavigator({
     screen: MainScreen
   },
   // tslint:disable-next-line:object-literal-sort-keys
-  BarCodeScanner: {
+  ScannerScreen: {
     navigationOptions: () => ({
       headerBackTitleStyle: {
         color: "#fff"
@@ -33,5 +34,21 @@ export default createStackNavigator({
       }
     }),
     screen: ScannerScreen
+  },
+  TransferScreen: {
+    navigationOptions: () => ({
+      headerBackTitleStyle: {
+        color: "#fff"
+      },
+      headerStyle: {
+        backgroundColor: "#46a096",
+        borderBottomColor: "#387f77"
+      },
+      headerTintColor: "#fff",
+      headerTitleStyle: {
+        color: "#fff"
+      }
+    }),
+    screen: TransferScreen
   }
 })

@@ -60,12 +60,22 @@ export class MainScreen extends Component<NavigationScreenProps, State> {
         />
         <View
           style={{
-            marginBottom: 30,
+            marginBottom: 2,
             marginTop: 10
           }}
         >
           <Button
-            onPress={() => this.props.navigation.navigate("BarCodeScanner")}
+            onPress={() => this.props.navigation.navigate("TransferScreen")}
+            title={"Overfør penge til opsparing"}
+          />
+        </View>
+        <View
+          style={{
+            marginBottom: 30
+          }}
+        >
+          <Button
+            onPress={() => this.props.navigation.navigate("ScannerScreen")}
             title={"Scan QR-kode"}
           />
         </View>
