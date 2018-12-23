@@ -1,11 +1,11 @@
-import { Action } from './Action'
-import { AddAction } from './AddAction'
-import { SetAction } from './SetAction'
-import { SubtractAction } from './SubtractAction'
+import { Action } from "./Action"
+import { AddAction } from "./AddAction"
+import { SetAction } from "./SetAction"
+import { SubtractAction } from "./SubtractAction"
 
 export class ActionHelper {
   public static parseCodeValue(qrCodeValue: string): Action | undefined {
-    const actionAndHash = qrCodeValue.split('&')
+    const actionAndHash = qrCodeValue.split("&")
 
     if (actionAndHash.length !== 2) {
       return undefined
@@ -15,7 +15,7 @@ export class ActionHelper {
     const hash = actionAndHash[1]
 
     // TODO: Implement actual hash check.
-    if (hash !== '1234567890') {
+    if (hash !== "1234567890") {
       return undefined
     }
 
@@ -26,13 +26,13 @@ export class ActionHelper {
 
     const actionCharacter = actionString.substring(0, 1)
     switch (actionCharacter) {
-      case '+':
+      case "+":
         return new AddAction(amount)
 
-      case '-':
+      case "-":
         return new SubtractAction(amount)
 
-      case '=':
+      case "=":
         return new SetAction(amount)
     }
 

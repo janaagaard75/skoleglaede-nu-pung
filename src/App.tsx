@@ -1,18 +1,18 @@
-import { createStackNavigator } from 'react-navigation'
+import { createStackNavigator } from "react-navigation"
 
-import { MainScreen } from './MainScreen'
-import { ScannerScreen } from './ScannerScreen'
+import { MainScreen } from "./MainScreen"
+import { ScannerScreen } from "./ScannerScreen"
 
 export default createStackNavigator({
   Main: {
     navigationOptions: () => ({
-      headerBackTitle: 'Tilbage',
+      headerBackTitle: "Tilbage",
       headerStyle: {
-        backgroundColor: '#46a096',
-        borderBottomColor: '#387f77'
+        backgroundColor: "#46a096",
+        borderBottomColor: "#387f77"
       },
       headerTitleStyle: {
-        color: '#fff'
+        color: "#fff"
       }
     }),
     screen: MainScreen
@@ -21,15 +21,15 @@ export default createStackNavigator({
   BarCodeScanner: {
     navigationOptions: () => ({
       headerBackTitleStyle: {
-        color: '#fff'
+        color: "#fff"
       },
       headerStyle: {
-        backgroundColor: '#46a096',
-        borderBottomColor: '#387f77'
+        backgroundColor: "#46a096",
+        borderBottomColor: "#387f77"
       },
-      headerTintColor: '#fff',
+      headerTintColor: "#fff",
       headerTitleStyle: {
-        color: '#fff'
+        color: "#fff"
       }
     }),
     screen: ScannerScreen

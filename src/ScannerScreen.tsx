@@ -1,16 +1,16 @@
-import * as React from 'react'
-import { BarCodeScanner } from 'expo'
-import { Button } from 'react-native'
-import { Dimensions } from 'react-native'
-import { NavigationScreenProps } from 'react-navigation'
-import { Permissions } from 'expo'
-import { StyleSheet } from 'react-native'
-import { Text } from 'react-native'
-import { View } from 'react-native'
+import * as React from "react"
+import { BarCodeScanner } from "expo"
+import { Button } from "react-native"
+import { Dimensions } from "react-native"
+import { NavigationScreenProps } from "react-navigation"
+import { Permissions } from "expo"
+import { StyleSheet } from "react-native"
+import { Text } from "react-native"
+import { View } from "react-native"
 
-import { Action } from './actions/Action'
-import { ActionHelper } from './actions/ActionHelper'
-import { Wallet } from './Wallet'
+import { Action } from "./actions/Action"
+import { ActionHelper } from "./actions/ActionHelper"
+import { Wallet } from "./Wallet"
 
 // The type definitions for BarCodeScanner are unfortunately not correct.
 const UntypedBarCodeScanner = BarCodeScanner as any
@@ -36,18 +36,18 @@ export class ScannerScreen extends React.Component<NavigationScreenProps, State>
       cameraPermission: PermissionState.Requesting,
       codeScanned: false,
       currentAction: undefined,
-      windowWidth: Dimensions.get('window').width
+      windowWidth: Dimensions.get("window").width
     }
   }
 
   public static navigationOptions = {
-    title: 'Scan QR-kode'
+    title: "Scan QR-kode"
   }
 
   public async componentDidMount() {
     const { status } = await Permissions.askAsync(Permissions.CAMERA)
     this.setState({
-      cameraPermission: status === 'granted' ? PermissionState.Granted : PermissionState.Denied
+      cameraPermission: status === "granted" ? PermissionState.Granted : PermissionState.Denied
     })
   }
 
@@ -67,9 +67,9 @@ export class ScannerScreen extends React.Component<NavigationScreenProps, State>
       <View style={{ flex: 1 }}>
         <View
           style={{
-            alignItems: 'center',
+            alignItems: "center",
             flex: 1,
-            justifyContent: 'center'
+            justifyContent: "center"
           }}
         >
           <View
@@ -90,7 +90,7 @@ export class ScannerScreen extends React.Component<NavigationScreenProps, State>
             fontSize: 20,
             marginBottom: 10,
             marginTop: 10,
-            textAlign: 'center'
+            textAlign: "center"
           }}
         >
           {this.getText(this.state.currentAction)}
@@ -113,7 +113,7 @@ export class ScannerScreen extends React.Component<NavigationScreenProps, State>
 
   private okButtonPressed() {
     if (this.state.currentAction === undefined) {
-      throw new Error('OK button pressed, but currentAction is undefined.')
+      throw new Error("OK button pressed, but currentAction is undefined.")
     }
 
     Wallet.performAction(this.state.currentAction)
@@ -137,10 +137,10 @@ export class ScannerScreen extends React.Component<NavigationScreenProps, State>
   private getText(action: Action | undefined): string {
     if (action === undefined) {
       if (this.state.codeScanned) {
-        return 'QR-koden er ikke accepteret.'
+        return "QR-koden er ikke accepteret."
       }
 
-      return 'Scan en QR-kode.'
+      return "Scan en QR-kode."
     }
 
     return action.text

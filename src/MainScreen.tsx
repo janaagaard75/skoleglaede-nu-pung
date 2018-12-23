@@ -1,13 +1,13 @@
-import * as React from 'react'
-import { Button } from 'react-native'
-import { Component } from 'react'
-import { Dimensions } from 'react-native'
-import { NavigationScreenProps } from 'react-navigation'
-import { Text } from 'react-native'
-import { View } from 'react-native'
+import * as React from "react"
+import { Button } from "react-native"
+import { Component } from "react"
+import { Dimensions } from "react-native"
+import { NavigationScreenProps } from "react-navigation"
+import { Text } from "react-native"
+import { View } from "react-native"
 
-import { Formatter } from './Formatter'
-import { Wallet } from './Wallet'
+import { Formatter } from "./Formatter"
+import { Wallet } from "./Wallet"
 
 interface State {
   walletAmount: number
@@ -20,10 +20,10 @@ export class MainScreen extends Component<NavigationScreenProps, State> {
 
     this.state = {
       walletAmount: Wallet.amount,
-      windowWidth: Dimensions.get('window').width
+      windowWidth: Dimensions.get("window").width
     }
 
-    this.props.navigation.addListener('willFocus',
+    this.props.navigation.addListener("willFocus",
       () => {
         this.setState({
           walletAmount: Wallet.amount
@@ -33,27 +33,27 @@ export class MainScreen extends Component<NavigationScreenProps, State> {
   }
 
   public static navigationOptions = {
-    title: 'Skoleglæde.nu pung'
+    title: "Skoleglæde.nu pung"
   }
 
   public render() {
     return (
       <View
         style={{
-          backgroundColor: '#fff',
+          backgroundColor: "#fff",
           flex: 1
         }}
       >
         <View
           style={{
             flex: 1,
-            justifyContent: 'center'
+            justifyContent: "center"
           }}
         >
           <Text
             style={{
               fontSize: 0.13 * this.state.windowWidth,
-              textAlign: 'center'
+              textAlign: "center"
             }}
           >
             {Formatter.formatAsCurrency(this.state.walletAmount)}
@@ -66,8 +66,8 @@ export class MainScreen extends Component<NavigationScreenProps, State> {
           }}
         >
           <Button
-            onPress={() => this.props.navigation.navigate('BarCodeScanner')}
-            title={'Scan QR-kode'}
+            onPress={() => this.props.navigation.navigate("BarCodeScanner")}
+            title={"Scan QR-kode"}
           />
         </View>
       </View>

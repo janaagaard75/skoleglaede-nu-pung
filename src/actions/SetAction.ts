@@ -1,4 +1,4 @@
-import { Action } from './Action'
+import { Action } from "./Action"
 
 export class SetAction extends Action {
   public get text(): string {
