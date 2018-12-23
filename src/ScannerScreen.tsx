@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import { BarCodeScanner } from "expo"
 import { Button } from "react-native"
 import { Dimensions } from "react-native"
