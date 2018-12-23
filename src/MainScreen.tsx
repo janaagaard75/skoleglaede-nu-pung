@@ -10,7 +10,8 @@ import { Formatter } from "./Formatter"
 import { Wallet } from "./Wallet"
 
 interface State {
-  creditAmount: number
+  credit: number
+  savings: number
   windowWidth: number
 }
 
@@ -19,14 +20,15 @@ export class MainScreen extends Component<NavigationScreenProps, State> {
     super(props, context)
 
     this.state = {
-      creditAmount: Wallet.credit,
+      credit: Wallet.credit,
+      savings: Wallet.savings,
       windowWidth: Dimensions.get("window").width
     }
 
     this.props.navigation.addListener("willFocus",
       () => {
         this.setState({
-          creditAmount: Wallet.credit
+          credit: Wallet.credit
         })
       }
     )
@@ -45,20 +47,60 @@ export class MainScreen extends Component<NavigationScreenProps, State> {
         }}
       >
         <View
+         style={{
+           flex: 1
+         }}
+        />
+        <View
           style={{
+            alignItems: "center",
             flex: 1,
             justifyContent: "center"
           }}
         >
           <Text
             style={{
+              fontSize: 0.05 * this.state.windowWidth
+            }}
+          >
+            Konto
+          </Text>
+          <Text
+            style={{
+              fontSize: 0.13 * this.state.windowWidth
+            }}
+          >
+            {Formatter.formatAsCurrency(this.state.credit)}
+          </Text>
+        </View>
+        <View
+          style={{
+            alignItems: "center",
+            flex: 1,
+            justifyContent: "center"
+          }}
+        >
+          <Text
+            style={{
+              fontSize: 0.05 * this.state.windowWidth
+            }}
+          >
+            Opsparing
+          </Text>
+          <Text
+            style={{
               fontSize: 0.13 * this.state.windowWidth,
               textAlign: "center"
             }}
           >
-            {Formatter.formatAsCurrency(this.state.creditAmount)}
+            {Formatter.formatAsCurrency(this.state.savings)}
           </Text>
         </View>
+        <View
+         style={{
+           flex: 1
+         }}
+        />
         <View
           style={{
             marginBottom: 30,
