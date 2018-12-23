@@ -10,7 +10,7 @@ import { Formatter } from "./Formatter"
 import { Wallet } from "./Wallet"
 
 interface State {
-  walletAmount: number
+  creditAmount: number
   windowWidth: number
 }
 
@@ -19,14 +19,14 @@ export class MainScreen extends Component<NavigationScreenProps, State> {
     super(props, context)
 
     this.state = {
-      walletAmount: Wallet.amount,
+      creditAmount: Wallet.credit,
       windowWidth: Dimensions.get("window").width
     }
 
     this.props.navigation.addListener("willFocus",
       () => {
         this.setState({
-          walletAmount: Wallet.amount
+          creditAmount: Wallet.credit
         })
       }
     )
@@ -56,7 +56,7 @@ export class MainScreen extends Component<NavigationScreenProps, State> {
               textAlign: "center"
             }}
           >
-            {Formatter.formatAsCurrency(this.state.walletAmount)}
+            {Formatter.formatAsCurrency(this.state.creditAmount)}
           </Text>
         </View>
         <View

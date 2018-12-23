@@ -1,13 +1,13 @@
 import { Action } from "./actions/Action"
 
 export class Wallet {
-  private static _amount = 0
+  private static _credit = 4000
 
-  public static get amount(): number {
-    return this._amount
+  public static get credit(): number {
+    return this._credit
   }
 
   public static performAction(action: Action) {
-    this._amount = action.performAction(this._amount)
+    this._credit = action.performAction(this._credit)
   }
 }
