@@ -11,7 +11,7 @@ Install `expo-cli` globally.
 
 ## Running the App
 
-Start the local server. This will give you a QR code that you can scan using the Expo Client app on your mobile divice.
+Start the local server. This will give you a QR code that you can scan using the Expo Client app on your mobile device.
 
     yarn start
 
@@ -28,7 +28,7 @@ If you're on a Mac and have Xcode installed, you can run the app using the iOS S
   - 500/1000/2000
 - Reset button
   - 4000 to start with
-  - No need for a reser QR code
+  - No need for a reset QR code
 - Persist the state when the app is restarted
 - Buttons that look like the ones on Skoleglæde.nu
 - Actual hash check
