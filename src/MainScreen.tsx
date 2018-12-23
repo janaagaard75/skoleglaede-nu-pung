@@ -51,51 +51,8 @@ export class MainScreen extends Component<NavigationScreenProps, State> {
            flex: 1
          }}
         />
-        <View
-          style={{
-            alignItems: "center",
-            flex: 1,
-            justifyContent: "center"
-          }}
-        >
-          <Text
-            style={{
-              fontSize: 0.05 * this.state.windowWidth
-            }}
-          >
-            Konto
-          </Text>
-          <Text
-            style={{
-              fontSize: 0.13 * this.state.windowWidth
-            }}
-          >
-            {Formatter.formatAsCurrency(this.state.credit)}
-          </Text>
-        </View>
-        <View
-          style={{
-            alignItems: "center",
-            flex: 1,
-            justifyContent: "center"
-          }}
-        >
-          <Text
-            style={{
-              fontSize: 0.05 * this.state.windowWidth
-            }}
-          >
-            Opsparing
-          </Text>
-          <Text
-            style={{
-              fontSize: 0.13 * this.state.windowWidth,
-              textAlign: "center"
-            }}
-          >
-            {Formatter.formatAsCurrency(this.state.savings)}
-          </Text>
-        </View>
+        {this.renderAccount("Konto", this.state.credit)}
+        {this.renderAccount("Opsparing", this.state.savings)}
         <View
          style={{
            flex: 1
@@ -112,6 +69,33 @@ export class MainScreen extends Component<NavigationScreenProps, State> {
             title={"Scan QR-kode"}
           />
         </View>
+      </View>
+    )
+  }
+
+  private renderAccount(title: string, amount: number): JSX.Element {
+    return (
+      <View
+        style={{
+          alignItems: "center",
+          flex: 1,
+          justifyContent: "center"
+        }}
+      >
+        <Text
+          style={{
+            fontSize: 0.05 * this.state.windowWidth
+          }}
+        >
+          {title}
+        </Text>
+        <Text
+          style={{
+            fontSize: 0.13 * this.state.windowWidth
+          }}
+        >
+          {Formatter.formatAsCurrency(amount)}
+        </Text>
       </View>
     )
   }
