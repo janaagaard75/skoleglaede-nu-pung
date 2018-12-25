@@ -25,10 +25,12 @@ export class MainScreen extends Component<NavigationScreenProps, State> {
       windowWidth: Dimensions.get("window").width
     }
 
+    // react-navigate doesn't allow sharing state between screens, and Wallet is not observable, so we are setting state manually when navigating back to this screen.
     this.props.navigation.addListener("willFocus",
       () => {
         this.setState({
-          credit: Wallet.credit
+          credit: Wallet.credit,
+          savings: Wallet.savings
         })
       }
     )
