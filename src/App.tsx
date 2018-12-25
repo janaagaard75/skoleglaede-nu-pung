@@ -20,52 +20,26 @@ export default createStackNavigator({
     screen: MainScreen
   },
   // tslint:disable-next-line:object-literal-sort-keys
-  ResetScreen: {
-    navigationOptions: () => ({
-      headerBackTitleStyle: {
-        color: "#fff"
-      },
-      headerStyle: {
-        backgroundColor: "#46a096",
-        borderBottomColor: "#387f77"
-      },
-      headerTintColor: "#fff",
-      headerTitleStyle: {
-        color: "#fff"
-      }
-    }),
-    screen: ResetScreen
-  },
-  ScannerScreen: {
-    navigationOptions: () => ({
-      headerBackTitleStyle: {
-        color: "#fff"
-      },
-      headerStyle: {
-        backgroundColor: "#46a096",
-        borderBottomColor: "#387f77"
-      },
-      headerTintColor: "#fff",
-      headerTitleStyle: {
-        color: "#fff"
-      }
-    }),
-    screen: ScannerScreen
-  },
-  TransferScreen: {
-    navigationOptions: () => ({
-      headerBackTitleStyle: {
-        color: "#fff"
-      },
-      headerStyle: {
-        backgroundColor: "#46a096",
-        borderBottomColor: "#387f77"
-      },
-      headerTintColor: "#fff",
-      headerTitleStyle: {
-        color: "#fff"
-      }
-    }),
-    screen: TransferScreen
-  }
+  ResetScreen: getSubScreen(ResetScreen),
+  ScannerScreen: getSubScreen(ScannerScreen),
+  TransferScreen: getSubScreen(TransferScreen)
 })
+
+function getSubScreen(screen: any) {
+  return ({
+    navigationOptions: () => ({
+      headerBackTitleStyle: {
+        color: "#fff"
+      },
+      headerStyle: {
+        backgroundColor: "#46a096",
+        borderBottomColor: "#387f77"
+      },
+      headerTintColor: "#fff",
+      headerTitleStyle: {
+        color: "#fff"
+      }
+    }),
+    screen: screen
+  })
+}
