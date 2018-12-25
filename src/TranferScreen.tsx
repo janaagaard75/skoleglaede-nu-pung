@@ -10,7 +10,7 @@ export class TransferScreen extends Component<NavigationScreenProps> {
   }
 
   public static navigationOptions = {
-    title: "Spar op"
+    title: "Overfør"
   }
 
   public render() {
