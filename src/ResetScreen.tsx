@@ -1,16 +1,19 @@
 import React from "react"
+import { Button } from "react-native"
 import { Component } from "react"
 import { View } from "react-native"
 import { Text } from "react-native"
 import { NavigationScreenProps } from "react-navigation"
 
-export class TransferScreen extends Component<NavigationScreenProps> {
+import { Wallet } from "./Wallet"
+
+export class ResetScreen extends Component<NavigationScreenProps> {
   constructor(props: NavigationScreenProps, context?: any) {
     super(props, context)
   }
 
   public static navigationOptions = {
-    title: "Overfør"
+    title: "Nulstil"
   }
 
   public render() {
@@ -23,9 +26,18 @@ export class TransferScreen extends Component<NavigationScreenProps> {
         }}
       >
         <Text>
-          TODO 500, 1000, 2000
+          Nultil din konto og opsparing?
         </Text>
+        <Button
+          onPress={() => this.resetPresed()}
+          title="Nultil"
+        />
       </View>
     )
+  }
+
+  private resetPresed() {
+    Wallet.reset()
+    this.props.navigation.goBack()
   }
 }
