@@ -1,6 +1,7 @@
 import React from "react"
 import { BarCodeScanner } from "expo"
 import { Button } from "react-native"
+import { Component } from "react"
 import { Dimensions } from "react-native"
 import { NavigationScreenProps } from "react-navigation"
 import { Permissions } from "expo"
@@ -28,7 +29,7 @@ interface State {
   windowWidth: number
 }
 
-export class ScannerScreen extends React.Component<NavigationScreenProps, State> {
+export class ScannerScreen extends Component<NavigationScreenProps, State> {
   constructor(props: NavigationScreenProps, context?: any) {
     super(props, context)
 
