@@ -65,6 +65,16 @@ export class MainScreen extends Component<NavigationScreenProps, State> {
           }}
         >
           <Button
+            onPress={() => this.props.navigation.navigate("ResetScreen")}
+            title={"Nulstil"}
+          />
+        </View>
+        <View
+          style={{
+            marginBottom: 2
+          }}
+        >
+          <Button
             onPress={() => this.props.navigation.navigate("TransferScreen")}
             title={"Overfør penge til opsparing"}
           />

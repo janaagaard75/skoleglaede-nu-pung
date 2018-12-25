@@ -1,6 +1,7 @@
 import { createStackNavigator } from "react-navigation"
 
 import { MainScreen } from "./MainScreen"
+import { ResetScreen } from "./ResetScreen"
 import { ScannerScreen } from "./ScannerScreen"
 import { TransferScreen } from "./TranferScreen"
 
@@ -19,6 +20,22 @@ export default createStackNavigator({
     screen: MainScreen
   },
   // tslint:disable-next-line:object-literal-sort-keys
+  ResetScreen: {
+    navigationOptions: () => ({
+      headerBackTitleStyle: {
+        color: "#fff"
+      },
+      headerStyle: {
+        backgroundColor: "#46a096",
+        borderBottomColor: "#387f77"
+      },
+      headerTintColor: "#fff",
+      headerTitleStyle: {
+        color: "#fff"
+      }
+    }),
+    screen: ResetScreen
+  },
   ScannerScreen: {
     navigationOptions: () => ({
       headerBackTitleStyle: {
