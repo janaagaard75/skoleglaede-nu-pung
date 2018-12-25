@@ -1,8 +1,11 @@
 import React from "react"
+import { Button } from "react-native"
 import { Component } from "react"
 import { View } from "react-native"
 import { Text } from "react-native"
 import { NavigationScreenProps } from "react-navigation"
+
+import { Wallet } from "./Wallet"
 
 export class ResetScreen extends Component<NavigationScreenProps> {
   constructor(props: NavigationScreenProps, context?: any) {
@@ -23,9 +26,18 @@ export class ResetScreen extends Component<NavigationScreenProps> {
         }}
       >
         <Text>
-          TODO
+          Nultil din konto og opsparing?
         </Text>
+        <Button
+          onPress={() => this.resetPresed()}
+          title="Nultil"
+        />
       </View>
     )
+  }
+
+  private resetPresed() {
+    Wallet.reset()
+    this.props.navigation.goBack()
   }
 }
