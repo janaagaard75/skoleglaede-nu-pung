@@ -7,6 +7,7 @@ import { Text } from "react-native"
 import { View } from "react-native"
 
 import { Formatter } from "./Formatter"
+import { SliderButton } from "./SliderButton"
 import { Wallet } from "./Wallet"
 
 interface State {
@@ -49,16 +50,16 @@ export class MainScreen extends Component<NavigationScreenProps, State> {
         }}
       >
         <View
-         style={{
-           flex: 1
-         }}
+          style={{
+            flex: 1
+          }}
         />
         {this.renderAccount("Konto", this.state.credit)}
         {this.renderAccount("Opsparing", this.state.savings)}
         <View
-         style={{
-           flex: 1
-         }}
+          style={{
+            flex: 1
+          }}
         />
         <View
           style={{
@@ -90,6 +91,10 @@ export class MainScreen extends Component<NavigationScreenProps, State> {
             onPress={() => this.props.navigation.navigate("ScannerScreen")}
             title={"Scan QR-kode"}
           />
+        </View>
+        <View
+        >
+          <SliderButton title="Slide me"/>
         </View>
       </View>
     )
