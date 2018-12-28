@@ -57,19 +57,14 @@ export class SliderButton extends Component<Props, State> {
           }
         })
       },
-      // onPanResponderGrant: (e, gestureState) => {
-      //   Game.instance.cardDragStarted(this.props.positionedCard)
-      // },
       onPanResponderMove: (e, gestureEvent) => {
-        console.info(this.animatedPosition)
-        Animated.event([
-          // tslint:disable-next-line:no-null-keyword
-          null as any,
-          {
-            dx: this.animatedPosition
-            // dy is not included since we the button only slides horizontally.
-          }
-        ])(e, gestureEvent)
+        if (this.state.buttonSize === undefined || this.state.sliderSize === undefined) {
+          throw new Error("Both buttonSize and sliderSize must be defined.")
+        }
+
+        const maximumDx = this.state.sliderSize.width - this.state.buttonSize.width
+        const restrictedDx = this.restrict(gestureEvent.dx, 0, maximumDx)
+        this.animatedPosition.setValue(restrictedDx)
       },
       onPanResponderStart: (e, gestureState) => {
         this.setState({
@@ -78,15 +73,6 @@ export class SliderButton extends Component<Props, State> {
       },
       onStartShouldSetPanResponder: (e, gestureState) => true
     })
-
-    // this.animatedPosition.addListener(x => {
-    //   if (this.state.buttonSize === undefined || this.state.sliderSize === undefined) {
-    //     return
-    //   }
-
-    //   const pixelsToRightBorder = (this.state.sliderSize.width) - (this.state.buttonSize.width + x.value)
-    //   console.info(this.state.sliderSize.x, this.state.sliderSize.width, this.state.buttonSize.x, this.state.buttonSize.width, this.animatedPosition, x.value, pixelsToRightBorder)
-    // })
   }
 
   private animatedPosition: Animated.Value
@@ -114,9 +100,7 @@ export class SliderButton extends Component<Props, State> {
           <Text
             onLayout={layoutEvent => this.setButtonSize(layoutEvent)}
             style={{
-              backgroundColor: "#cc0",
-              // borderColor: this.getBorderColor(),
-              // borderWidth: 2,
+              backgroundColor: this.getBackgroundColor(),
               paddingHorizontal: 4,
               paddingVertical: 2
             }}
@@ -128,28 +112,40 @@ export class SliderButton extends Component<Props, State> {
     )
   }
 
-  private getBorderColor(): string {
+  private getBackgroundColor(): string {
     switch (this.state.sliderState) {
       case SliderState.Animating:
-        return "#0f0"
+        return "#f99"
 
       case SliderState.Dragging:
-        return "#f00"
+        return "#dda"
 
       case SliderState.Idle:
-        return "#000"
+        return "#ccc"
     }
   }
 
-  private setSliderSize(layoutEvent: LayoutChangeEvent): void {
-    this.setState({
-      sliderSize: layoutEvent.nativeEvent.layout
-    })
+  private restrict(input: number, minimum: number, maximum: number): number {
+    if (input < minimum) {
+      return minimum
+    }
+
+    if (input > maximum) {
+      return maximum
+    }
+
+    return input
   }
 
   private setButtonSize(layoutEvent: LayoutChangeEvent): void {
     this.setState({
       buttonSize: layoutEvent.nativeEvent.layout
+    })
+  }
+
+  private setSliderSize(layoutEvent: LayoutChangeEvent): void {
+    this.setState({
+      sliderSize: layoutEvent.nativeEvent.layout
     })
   }
 }
