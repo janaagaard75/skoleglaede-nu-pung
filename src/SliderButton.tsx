@@ -10,6 +10,7 @@ import { Text } from "react-native"
 import { View } from "react-native"
 
 interface Props {
+  onTrigger: () => void,
   title: string
 }
 
@@ -40,6 +41,10 @@ export class SliderButton extends Component<Props, State> {
 
     this.panResponder = PanResponder.create({
       onPanResponderEnd: (e, gestureState) => {
+        if (this.state.sliderState === SliderState.DropWillTriggerAction) {
+          this.props.onTrigger()
+        }
+
         this.setState({
           sliderState: SliderState.Animating
         })
@@ -67,7 +72,7 @@ export class SliderButton extends Component<Props, State> {
 
         const maximumDx = this.state.sliderSize.width - this.state.buttonSize.width
         const restrictedDx = this.restrict(gestureEvent.dx, 0, maximumDx)
-        const dropZoneWidth = 10
+        const dropZoneWidth = 20
         const withinDropZone = (maximumDx - restrictedDx) <= dropZoneWidth
         this.setState({
           sliderState: withinDropZone
@@ -116,7 +121,7 @@ export class SliderButton extends Component<Props, State> {
               paddingVertical: 2
             }}
           >
-            Slide me
+            {this.props.title}
           </Text>
         </Animated.View>
       </View>

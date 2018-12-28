@@ -1,10 +1,10 @@
 import React from "react"
-import { Button } from "react-native"
 import { Component } from "react"
-import { View } from "react-native"
-import { Text } from "react-native"
 import { NavigationScreenProps } from "react-navigation"
+import { Text } from "react-native"
+import { View } from "react-native"
 
+import { SliderButton } from "./SliderButton"
 import { Wallet } from "./Wallet"
 
 export class ResetScreen extends Component<NavigationScreenProps> {
@@ -20,23 +20,38 @@ export class ResetScreen extends Component<NavigationScreenProps> {
     return (
       <View
         style={{
-          alignItems: "center",
-          flex: 1,
-          justifyContent: "center"
+          flex: 1
         }}
       >
-        <Text>
-          Nultil din konto og opsparing?
-        </Text>
-        <Button
-          onPress={() => this.resetPresed()}
-          title="Nultil"
-        />
+        <View
+          style={{
+            alignItems: "center",
+            flex: 1,
+            justifyContent: "center",
+            paddingHorizontal: 10
+          }}
+        >
+          <Text>
+            Nultil din konto til 4.000 kroner og opsparing til 0 kroner?
+          </Text>
+        </View>
+        <View
+          style={{
+            paddingBottom: 30,
+            paddingHorizontal: 20,
+            width: "100%"
+          }}
+        >
+          <SliderButton
+            onTrigger={() => this.resetWallet()}
+            title="Nulstil"
+          />
+        </View>
       </View>
     )
   }
 
-  private resetPresed() {
+  private resetWallet() {
     Wallet.reset()
     this.props.navigation.goBack()
   }

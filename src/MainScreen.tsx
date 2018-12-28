@@ -7,7 +7,6 @@ import { Text } from "react-native"
 import { View } from "react-native"
 
 import { Formatter } from "./Formatter"
-import { SliderButton } from "./SliderButton"
 import { Wallet } from "./Wallet"
 
 interface State {
@@ -51,6 +50,17 @@ export class MainScreen extends Component<NavigationScreenProps, State> {
       >
         <View
           style={{
+            alignSelf: "flex-end",
+            paddingRight: 5
+          }}
+        >
+          <Button
+            onPress={() => this.props.navigation.navigate("ResetScreen")}
+            title={"Nulstil"}
+          />
+        </View>
+        <View
+          style={{
             flex: 1
           }}
         />
@@ -61,17 +71,6 @@ export class MainScreen extends Component<NavigationScreenProps, State> {
             flex: 1
           }}
         />
-        <View
-          style={{
-            marginBottom: 2,
-            marginTop: 10
-          }}
-        >
-          <Button
-            onPress={() => this.props.navigation.navigate("ResetScreen")}
-            title={"Nulstil"}
-          />
-        </View>
         <View
           style={{
             marginBottom: 2
@@ -92,13 +91,6 @@ export class MainScreen extends Component<NavigationScreenProps, State> {
             title={"Scan QR-kode"}
           />
         </View>
-        <View
-          style={{
-            padding: 10
-          }}
-        >
-          <SliderButton title="Slide me"/>
-        </View>
       </View>
     )
   }
@@ -107,13 +99,13 @@ export class MainScreen extends Component<NavigationScreenProps, State> {
     return (
       <View
         style={{
-          alignItems: "center",
           flex: 1,
           justifyContent: "center"
         }}
       >
         <Text
           style={{
+            alignSelf: "center",
             fontSize: 0.05 * this.state.windowWidth
           }}
         >
@@ -121,7 +113,9 @@ export class MainScreen extends Component<NavigationScreenProps, State> {
         </Text>
         <Text
           style={{
-            fontSize: 0.13 * this.state.windowWidth
+            alignSelf: "center",
+            fontSize: 0.13 * this.state.windowWidth,
+            paddingRight: 10
           }}
         >
           {Formatter.formatAsCurrency(amount)}
