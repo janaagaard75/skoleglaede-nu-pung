@@ -1,7 +1,9 @@
 import React from "react"
-import { Animated, LayoutChangeEvent, LayoutRectangle } from "react-native"
+import { Animated } from "react-native"
 import { Component } from "react"
 import { Easing } from "react-native"
+import { LayoutChangeEvent } from "react-native"
+import { LayoutRectangle } from "react-native"
 import { PanResponder } from "react-native"
 import { PanResponderInstance } from "react-native"
 import { Text } from "react-native"
@@ -13,7 +15,8 @@ interface Props {
 
 enum SliderState {
   Animating,
-  Dragging,
+  DropWillCancel,
+  DropWillTriggerAction,
   Idle
 }
 
@@ -50,7 +53,7 @@ export class SliderButton extends Component<Props, State> {
             useNativeDriver: true
           }
         ).start(() => {
-          if (this.state.sliderState !== SliderState.Dragging) {
+          if (this.state.sliderState !== SliderState.DropWillCancel) {
             this.setState({
               sliderState: SliderState.Idle
             })
@@ -64,11 +67,19 @@ export class SliderButton extends Component<Props, State> {
 
         const maximumDx = this.state.sliderSize.width - this.state.buttonSize.width
         const restrictedDx = this.restrict(gestureEvent.dx, 0, maximumDx)
+        const dropZoneWidth = 10
+        const withinDropZone = (maximumDx - restrictedDx) <= dropZoneWidth
+        this.setState({
+          sliderState: withinDropZone
+            ? SliderState.DropWillTriggerAction
+            : SliderState.DropWillCancel
+        })
+
         this.animatedPosition.setValue(restrictedDx)
       },
       onPanResponderStart: (e, gestureState) => {
         this.setState({
-          sliderState: SliderState.Dragging
+          sliderState: SliderState.DropWillCancel
         })
       },
       onStartShouldSetPanResponder: (e, gestureState) => true
@@ -115,10 +126,13 @@ export class SliderButton extends Component<Props, State> {
   private getBackgroundColor(): string {
     switch (this.state.sliderState) {
       case SliderState.Animating:
-        return "#f99"
+        return "#99f"
 
-      case SliderState.Dragging:
-        return "#dda"
+      case SliderState.DropWillCancel:
+        return "#f66"
+
+      case SliderState.DropWillTriggerAction:
+        return "#6f6"
 
       case SliderState.Idle:
         return "#ccc"
