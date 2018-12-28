@@ -1,5 +1,5 @@
 import React from "react"
-import { Animated } from "react-native"
+import { Animated, LayoutChangeEvent, LayoutRectangle } from "react-native"
 import { Component } from "react"
 import { Easing } from "react-native"
 import { PanResponder } from "react-native"
@@ -18,7 +18,8 @@ enum SliderState {
 }
 
 interface State {
-  // sliderState is not yet used.
+  buttonSize: LayoutRectangle | undefined,
+  sliderSize: LayoutRectangle | undefined,
   sliderState: SliderState
 }
 
@@ -27,10 +28,12 @@ export class SliderButton extends Component<Props, State> {
     super(props, context)
 
     this.state = {
+      buttonSize: undefined,
+      sliderSize: undefined,
       sliderState: SliderState.Idle
     }
 
-    this.animatedPosition = new Animated.ValueXY()
+    this.animatedPosition = new Animated.Value(0)
 
     this.panResponder = PanResponder.create({
       onPanResponderEnd: (e, gestureState) => {
@@ -43,7 +46,8 @@ export class SliderButton extends Component<Props, State> {
           {
             duration: 100,
             easing: Easing.ease,
-            toValue: { x: 0, y: 0 }
+            toValue: 0,
+            useNativeDriver: true
           }
         ).start(() => {
           if (this.state.sliderState !== SliderState.Dragging) {
@@ -57,12 +61,13 @@ export class SliderButton extends Component<Props, State> {
       //   Game.instance.cardDragStarted(this.props.positionedCard)
       // },
       onPanResponderMove: (e, gestureEvent) => {
+        console.info(this.animatedPosition)
         Animated.event([
           // tslint:disable-next-line:no-null-keyword
           null as any,
           {
+            dx: this.animatedPosition
             // dy is not included since we the button only slides horizontally.
-            dx: this.animatedPosition.x
           }
         ])(e, gestureEvent)
       },
@@ -73,39 +78,53 @@ export class SliderButton extends Component<Props, State> {
       },
       onStartShouldSetPanResponder: (e, gestureState) => true
     })
+
+    // this.animatedPosition.addListener(x => {
+    //   if (this.state.buttonSize === undefined || this.state.sliderSize === undefined) {
+    //     return
+    //   }
+
+    //   const pixelsToRightBorder = (this.state.sliderSize.width) - (this.state.buttonSize.width + x.value)
+    //   console.info(this.state.sliderSize.x, this.state.sliderSize.width, this.state.buttonSize.x, this.state.buttonSize.width, this.animatedPosition, x.value, pixelsToRightBorder)
+    // })
   }
 
-  private animatedPosition: Animated.ValueXY
+  private animatedPosition: Animated.Value
   private panResponder: PanResponderInstance
 
   public render() {
-    const style = {
-      transform: this.animatedPosition.getTranslateTransform()
+    const animatedViewStyle = {
+      transform: [{
+        translateX: this.animatedPosition
+      }]
     }
 
     return (
-      <Animated.View
-        style={style}
-        {...this.panResponder.panHandlers}
+      <View
+        onLayout={layoutEvent => this.setSliderSize(layoutEvent)}
+        style={{
+          alignItems: "flex-start",
+          backgroundColor: "#990"
+        }}
       >
-        <View
-          style={{
-            alignItems: "flex-start",
-            padding: 4
-          }}
+        <Animated.View
+          style={animatedViewStyle}
+          {...this.panResponder.panHandlers}
         >
           <Text
+            onLayout={layoutEvent => this.setButtonSize(layoutEvent)}
             style={{
-              borderColor: this.getBorderColor(),
-              borderWidth: 2,
+              backgroundColor: "#cc0",
+              // borderColor: this.getBorderColor(),
+              // borderWidth: 2,
               paddingHorizontal: 4,
               paddingVertical: 2
             }}
           >
             Slide me
           </Text>
-        </View>
-      </Animated.View>
+        </Animated.View>
+      </View>
     )
   }
 
@@ -120,5 +139,17 @@ export class SliderButton extends Component<Props, State> {
       case SliderState.Idle:
         return "#000"
     }
+  }
+
+  private setSliderSize(layoutEvent: LayoutChangeEvent): void {
+    this.setState({
+      sliderSize: layoutEvent.nativeEvent.layout
+    })
+  }
+
+  private setButtonSize(layoutEvent: LayoutChangeEvent): void {
+    this.setState({
+      buttonSize: layoutEvent.nativeEvent.layout
+    })
   }
 }

@@ -93,6 +93,9 @@ export class MainScreen extends Component<NavigationScreenProps, State> {
           />
         </View>
         <View
+          style={{
+            padding: 10
+          }}
         >
           <SliderButton title="Slide me"/>
         </View>
