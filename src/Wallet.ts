@@ -17,7 +17,16 @@ export class Wallet {
     return this._savings
   }
 
-  public static performAction(action: Action) {
+  public static performAction(action: Action): void {
     this._credit = action.performAction(this._credit)
+  }
+
+  public static transferToSavings(amount: number): void {
+    this._credit -= amount
+    this._savings += amount
+  }
+
+  public static transferToSavingsAllowed(amount: number): boolean {
+    return this._savings >= amount
   }
 }
