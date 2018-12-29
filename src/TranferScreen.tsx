@@ -5,7 +5,7 @@ import { Text } from "react-native"
 import { TouchableOpacity } from "react-native"
 import { View } from "react-native"
 
-import { SliderButton } from "./SliderButton"
+import { SlideButton } from "./SlideButton"
 import { Wallet } from "./Wallet"
 
 enum TransferAmount {
@@ -58,7 +58,7 @@ export class TransferScreen extends Component<NavigationScreenProps, State> {
             width: "100%"
           }}
         >
-          <SliderButton
+          <SlideButton
             onTrigger={() => this.transfer()}
             title="Overfør"
           />

@@ -4,7 +4,7 @@ import { NavigationScreenProps } from "react-navigation"
 import { Text } from "react-native"
 import { View } from "react-native"
 
-import { SliderButton } from "./SliderButton"
+import { SlideButton } from "./SlideButton"
 import { Wallet } from "./Wallet"
 
 export class ResetScreen extends Component<NavigationScreenProps> {
@@ -42,7 +42,7 @@ export class ResetScreen extends Component<NavigationScreenProps> {
             width: "100%"
           }}
         >
-          <SliderButton
+          <SlideButton
             onTrigger={() => this.resetWallet()}
             title="Nulstil"
           />

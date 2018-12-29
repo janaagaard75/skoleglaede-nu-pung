@@ -27,7 +27,7 @@ interface State {
   sliderState: SliderState
 }
 
-export class SliderButton extends Component<Props, State> {
+export class SlideButton extends Component<Props, State> {
   constructor(props: Props, context?: any) {
     super(props, context)
 
