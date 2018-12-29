@@ -4,6 +4,7 @@ import { Component } from "react"
 import { Dimensions } from "react-native"
 import { NavigationScreenProps } from "react-navigation"
 import { Text } from "react-native"
+import { TouchableOpacity } from "react-native"
 import { View } from "react-native"
 
 import { Formatter } from "./Formatter"
@@ -51,13 +52,11 @@ export class MainScreen extends Component<NavigationScreenProps, State> {
         <View
           style={{
             alignSelf: "flex-end",
-            paddingRight: 5
+            paddingRight: 20,
+            paddingTop: 10
           }}
         >
-          <Button
-            onPress={() => this.props.navigation.navigate("ResetScreen")}
-            title={"Nulstil"}
-          />
+          {this.renderButton(() => this.props.navigation.navigate("ResetScreen"), 13, "Nulstil")}
         </View>
         <View
           style={{
@@ -73,23 +72,19 @@ export class MainScreen extends Component<NavigationScreenProps, State> {
         />
         <View
           style={{
-            marginBottom: 2
+            marginBottom: 10,
+            paddingHorizontal: 20
           }}
         >
-          <Button
-            onPress={() => this.props.navigation.navigate("TransferScreen")}
-            title={"Overfør penge til opsparing"}
-          />
+          {this.renderButton(() => this.props.navigation.navigate("TransferScreen"), 16, "Overfør til opsparing")}
         </View>
         <View
           style={{
-            marginBottom: 30
+            marginBottom: 30,
+            paddingHorizontal: 20
           }}
         >
-          <Button
-            onPress={() => this.props.navigation.navigate("ScannerScreen")}
-            title={"Scan QR-kode"}
-          />
+          {this.renderButton(() => this.props.navigation.navigate("ScannerScreen"), 16, "Scan QR-kode")}
         </View>
       </View>
     )
@@ -121,6 +116,33 @@ export class MainScreen extends Component<NavigationScreenProps, State> {
           {Formatter.formatAsCurrency(amount)}
         </Text>
       </View>
+    )
+  }
+
+  private renderButton(
+    onPress: () => void,
+    fontSize: number,
+    title: string
+  ) {
+    return (
+      <TouchableOpacity
+        onPress={onPress}
+        style={{
+          alignItems: "center",
+          borderColor: "#000",
+          borderWidth: 2,
+          paddingHorizontal: Math.round(fontSize / 16 * 11),
+          paddingVertical: Math.round(fontSize / 16 * 6)
+        }}
+      >
+        <Text
+          style={{
+            fontSize: fontSize
+          }}
+        >
+          {title}
+        </Text>
+      </TouchableOpacity>
     )
   }
 }
