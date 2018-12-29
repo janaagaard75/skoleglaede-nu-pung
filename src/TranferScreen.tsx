@@ -40,6 +40,9 @@ export class TransferScreen extends Component<NavigationScreenProps, State> {
           flex: 1
         }}
       >
+        <Text>
+          Vælg hvor mange penge du til overføre. (TODO: Her skal der stå hvor meget man har på hver konto.)
+        </Text>
         <View
           style={{
             alignItems: "center",
