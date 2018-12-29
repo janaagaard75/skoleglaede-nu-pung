@@ -103,45 +103,38 @@ export class SlideButton extends Component<Props, State> {
 
     return (
       <View
-        onLayout={layoutEvent => this.setSliderSize(layoutEvent)}
         style={{
-          alignItems: "flex-start",
-          backgroundColor: "#990"
+          borderWidth: 2,
+          padding: 3
         }}
       >
-        <Animated.View
-          style={animatedViewStyle}
-          {...this.panResponder.panHandlers}
+        <View
+          onLayout={layoutEvent => this.setSliderSize(layoutEvent)}
+          style={{
+            alignItems: "flex-start",
+            borderColor: "#000"
+          }}
         >
-          <Text
-            onLayout={layoutEvent => this.setButtonSize(layoutEvent)}
-            style={{
-              backgroundColor: this.getBackgroundColor(),
-              paddingHorizontal: 4,
-              paddingVertical: 2
-            }}
+          <Animated.View
+            style={animatedViewStyle}
+            {...this.panResponder.panHandlers}
           >
-            {this.props.title}
-          </Text>
-        </Animated.View>
+            <Text
+              onLayout={layoutEvent => this.setButtonSize(layoutEvent)}
+              style={{
+                borderColor: "#000",
+                borderWidth: 2,
+                fontSize: 16,
+                paddingHorizontal: 6,
+                paddingVertical: 2
+              }}
+            >
+              {this.props.title}
+            </Text>
+          </Animated.View>
+        </View>
       </View>
     )
-  }
-
-  private getBackgroundColor(): string {
-    switch (this.state.sliderState) {
-      case SliderState.Animating:
-        return "#99f"
-
-      case SliderState.DropWillCancel:
-        return "#f66"
-
-      case SliderState.DropWillTriggerAction:
-        return "#6f6"
-
-      case SliderState.Idle:
-        return "#ccc"
-    }
   }
 
   private restrict(input: number, minimum: number, maximum: number): number {
