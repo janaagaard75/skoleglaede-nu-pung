@@ -2,9 +2,10 @@ import React from "react"
 import { Component } from "react"
 import { NavigationScreenProps } from "react-navigation"
 import { Text } from "react-native"
-import { TouchableOpacity } from "react-native"
 import { View } from "react-native"
 
+import { Button } from "./Button"
+import { Formatter } from "./Formatter"
 import { SlideButton } from "./SlideButton"
 import { Wallet } from "./Wallet"
 
@@ -40,14 +41,29 @@ export class TransferScreen extends Component<NavigationScreenProps, State> {
           flex: 1
         }}
       >
-        <Text>
-          Vælg hvor mange penge du til overføre. (TODO: Her skal der stå hvor meget man har på hver konto.)
-        </Text>
+        <View
+          style={{
+            marginHorizontal: 20,
+            marginTop: 30
+          }}
+        >
+          <Text>
+            Vælg hvor mange penge du til overføre fra din konto til opsparing.
+          </Text>
+          <Text style={{ marginTop: 15 }}>
+            Konto: {Formatter.formatAsCurrency(Wallet.credit)}
+          </Text>
+          <Text style={{ marginTop: 5 }}>
+            Opsparing: {Formatter.formatAsCurrency(Wallet.savings)}
+          </Text>
+        </View>
         <View
           style={{
             alignItems: "center",
+            alignSelf: "center",
             flex: 1,
-            justifyContent: "center"
+            justifyContent: "center",
+            width: "50%"
           }}
         >
           {this.renderTransferAmount(TransferAmount.Transfer200)}
@@ -71,31 +87,20 @@ export class TransferScreen extends Component<NavigationScreenProps, State> {
   }
 
   private renderTransferAmount(amount: TransferAmount) {
-    const isSeleced = amount === this.state.selectedTransfer
-
     return (
-      <TouchableOpacity
-        onPress={() => {
-          this.setState({
-            selectedTransfer: amount
-          })
-        }}
+      <View
         style={{
-          backgroundColor: isSeleced ? "#bbb" : "#fff",
-          borderWidth: 2,
-          margin: 5,
-          padding: 10,
-          width: 100
+          marginVertical: 5,
+          width: "100%"
         }}
       >
-        <Text
-          style={{
-            alignSelf: "center"
-          }}
-        >
-          {amount}
-        </Text>
-      </TouchableOpacity>
+        <Button
+          onPress={() => this.setState({ selectedTransfer: amount })}
+          fontSize={16}
+          selected={this.state.selectedTransfer === amount}
+          title={Formatter.formatAsCurrency(amount)}
+        />
+      </View>
     )
   }
 
