@@ -10,7 +10,7 @@ import { Text } from "react-native"
 import { View } from "react-native"
 
 import { Action } from "./actions/Action"
-import { ActionHelper } from "./actions/ActionHelper"
+import { QrCodeParser } from "./actions/QrCodeParser"
 import { Wallet } from "./Wallet"
 
 // The type definitions for BarCodeScanner are unfortunately not correct.
@@ -128,7 +128,7 @@ export class ScannerScreen extends Component<NavigationScreenProps, State> {
   }
 
   private handleBarCodeScanned = ({ type, data }: any) => {
-    const action = ActionHelper.parseCodeValue(data)
+    const action = QrCodeParser.parseCodeValue(data)
     this.setState({
       codeScanned: true,
       currentAction: action

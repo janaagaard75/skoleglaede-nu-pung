@@ -3,7 +3,7 @@ import { AddAction } from "./AddAction"
 import { SetAction } from "./SetAction"
 import { SubtractAction } from "./SubtractAction"
 
-export class ActionHelper {
+export class QrCodeParser {
   public static parseCodeValue(qrCodeValue: string): Action | undefined {
     const actionAndHash = qrCodeValue.split("&")
 
