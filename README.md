@@ -21,11 +21,19 @@ If you're on a Mac and have Xcode installed, you can run the app using the iOS S
 
 ## To Do
 
-- Persist the state when the app is restarted
+- Layout on big screens
+- Layout on Android
+  - [Raleway font](https://fonts.google.com/specimen/Raleway)
+- Layout of scanner screen
 - Actual hash check
+- Persist the state when the app is restarted
 - Sound effects
 - Animate amounts
   - Slide up and down when adding or subtracting
   - Fade out and in when resetting
+- Better layout
+  - Commas on numbers should align
+  - Reset screen is too empty
+  - Show amounts on reset screen?
 - TestFlight on iOS
 - Equivalent for TestFlight on Android
