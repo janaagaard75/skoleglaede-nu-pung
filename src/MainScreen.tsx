@@ -1,6 +1,7 @@
 import React from "react"
 import { Component } from "react"
 import { Dimensions } from "react-native"
+import { ifIphoneX } from "react-native-iphone-x-helper"
 import { NavigationScreenProps } from "react-navigation"
 import { Text } from "react-native"
 import { View } from "react-native"
@@ -87,7 +88,7 @@ export class MainScreen extends Component<NavigationScreenProps, State> {
         </View>
         <View
           style={{
-            marginBottom: 30,
+            marginBottom: ifIphoneX(50, 30),
             paddingHorizontal: 20
           }}
         >
