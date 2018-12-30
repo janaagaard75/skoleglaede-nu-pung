@@ -21,21 +21,11 @@ If you're on a Mac and have Xcode installed, you can run the app using the iOS S
 
 ## To Do
 
-- Slide to confirm
-- Ability to put amount in bank
-  - Both amounts on the front page ("konto" and "opsparing")
-  - Icons: Credit card and bank
-  - 500/1000/2000
-- Reset button
-  - 4000 to start with
-  - No need for a reset QR code
 - Persist the state when the app is restarted
-- Buttons that look like the ones on Skoleglæde.nu
 - Actual hash check
 - Sound effects
 - Animate amounts
   - Slide up and down when adding or subtracting
   - Fade out and in when resetting
-- TestFlight
+- TestFlight on iOS
 - Equivalent for TestFlight on Android
-- Persist the state when the app is updated(?)
