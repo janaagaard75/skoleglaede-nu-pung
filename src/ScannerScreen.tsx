@@ -1,9 +1,9 @@
 import React from "react"
 import { BarCodeScanner } from "expo"
-import { Button } from "react-native"
 import { Component } from "react"
 import { Dimensions } from "react-native"
 import { NavigationScreenProps } from "react-navigation"
+import { ifIphoneX } from "react-native-iphone-x-helper"
 import { Permissions } from "expo"
 import { StyleSheet } from "react-native"
 import { Text } from "react-native"
@@ -11,6 +11,7 @@ import { View } from "react-native"
 
 import { Action } from "./actions/Action"
 import { QrCodeParser } from "./actions/QrCodeParser"
+import { SlideButton } from "./SlideButton"
 import { Wallet } from "./Wallet"
 
 // The type definitions for BarCodeScanner are unfortunately not correct.
@@ -98,14 +99,15 @@ export class ScannerScreen extends Component<NavigationScreenProps, State> {
         </Text>
         <View
           style={{
-            marginBottom: 30,
-            marginTop: 10
+            marginBottom: ifIphoneX(50, 30),
+            marginTop: 10,
+            paddingHorizontal: 20
           }}
         >
-          <Button
-            onPress={() => this.okButtonPressed()}
+          <SlideButton
+            onTrigger={() => this.okButtonPressed()}
             disabled={this.state.currentAction === undefined}
-            title="OK"
+            title="Bekræft"
           />
         </View>
       </View>

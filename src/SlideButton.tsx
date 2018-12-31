@@ -10,6 +10,7 @@ import { Text } from "react-native"
 import { View } from "react-native"
 
 interface Props {
+  disabled?: boolean
   onTrigger: () => void,
   title: string
 }
@@ -87,7 +88,7 @@ export class SlideButton extends Component<Props, State> {
           sliderState: SliderState.DropWillCancel
         })
       },
-      onStartShouldSetPanResponder: (e, gestureState) => true
+      onStartShouldSetPanResponder: (e, gestureState) => !this.props.disabled
     })
   }
 
@@ -122,8 +123,9 @@ export class SlideButton extends Component<Props, State> {
             <Text
               onLayout={layoutEvent => this.setButtonSize(layoutEvent)}
               style={{
-                borderColor: "#000",
+                borderColor: this.props.disabled ? "#999" : "#000",
                 borderWidth: 2,
+                color: this.props.disabled ? "#999" : "#000",
                 fontSize: 16,
                 paddingHorizontal: 6,
                 paddingVertical: 2
