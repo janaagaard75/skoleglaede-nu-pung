@@ -23,10 +23,10 @@ If you're on a Mac and have Xcode installed, you can run the app using the iOS S
 
 - Layout on big screens
 - Layout on Android
-  - [Raleway font](https://fonts.google.com/specimen/Raleway)
 - Layout of scanner screen
 - Actual hash check
 - Persist the state when the app is restarted
+- Handle that the user does not allow access to the camera
 - Sound effects
 - Animate amounts
   - Slide up and down when adding or subtracting
