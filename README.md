@@ -22,7 +22,6 @@ If you're on a Mac and have Xcode installed, you can run the app using the iOS S
 ## To Do
 
 - Layout on Android
-- Actual hash check
 - Persist the state when the app is restarted
 - Handle that the user does not allow access to the camera
 - Sound effects
@@ -34,4 +33,5 @@ If you're on a Mac and have Xcode installed, you can run the app using the iOS S
   - Reset screen is too empty
   - Show amounts on reset screen?
 - TestFlight on iOS
+- Actual hash check
 - Equivalent for TestFlight on Android
