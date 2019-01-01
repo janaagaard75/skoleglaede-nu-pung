@@ -88,6 +88,8 @@ export class TransferScreen extends Component<NavigationScreenProps, State> {
   }
 
   private renderTransferAmount(amount: TransferAmount) {
+    const enabled = Wallet.transferToSavingsAllowed(amount)
+
     return (
       <View
         style={{
@@ -96,8 +98,9 @@ export class TransferScreen extends Component<NavigationScreenProps, State> {
         }}
       >
         <Button
-          onPress={() => this.setState({ selectedTransfer: amount })}
+          disabled={!enabled}
           fontSize={16}
+          onPress={() => this.setState({ selectedTransfer: amount })}
           selected={this.state.selectedTransfer === amount}
           title={Formatter.formatAsCurrency(amount)}
         />

@@ -58,7 +58,7 @@ export class Wallet {
   }
 
   public static transferToSavingsAllowed(amount: number): boolean {
-    return this._savings >= amount
+    return this._credit >= amount
   }
 
   private static async save() {
