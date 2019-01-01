@@ -22,7 +22,6 @@ If you're on a Mac and have Xcode installed, you can run the app using the iOS S
 ## To Do
 
 - Layout on Android
-- Persist the state when the app is restarted
 - Handle that the user does not allow access to the camera
 - Sound effects
 - Animate amounts
