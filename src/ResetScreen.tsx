@@ -26,7 +26,6 @@ export class ResetScreen extends Component<NavigationScreenProps> {
       >
         <View
           style={{
-            alignItems: "center",
             flex: 1,
             justifyContent: "center",
             paddingHorizontal: 10
@@ -34,6 +33,9 @@ export class ResetScreen extends Component<NavigationScreenProps> {
         >
           <Text>
             Nultil din konto til 4.000 kroner og opsparing til 0 kroner?
+          </Text>
+          <Text style={{ marginTop: 10 }}>
+            Denne handling kan ikke fortrydes.
           </Text>
         </View>
         <View
