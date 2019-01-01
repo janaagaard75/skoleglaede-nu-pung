@@ -21,8 +21,9 @@ If you're on a Mac and have Xcode installed, you can run the app using the iOS S
 
 ## To Do
 
-- Layout on Android
 - Handle that the user does not allow access to the camera
+- Handle transferring more money that is available(?)
+- Show amounts on the scanner screen(?)
 - Sound effects
 - Animate amounts
   - Slide up and down when adding or subtracting

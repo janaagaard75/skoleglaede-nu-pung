@@ -5,7 +5,6 @@ import { Dimensions } from "react-native"
 import { NavigationScreenProps } from "react-navigation"
 import { ifIphoneX } from "react-native-iphone-x-helper"
 import { Permissions } from "expo"
-import { StyleSheet } from "react-native"
 import { Text } from "react-native"
 import { View } from "react-native"
 
@@ -74,18 +73,14 @@ export class ScannerScreen extends Component<NavigationScreenProps, State> {
             justifyContent: "center"
           }}
         >
-          <View
+          <UntypedBarCodeScanner
+            barCodeTypes={[BarCodeScanner.Constants.BarCodeType.qr]}
+            onBarCodeScanned={this.handleBarCodeScanned}
             style={{
               height: roundedViewfinderSize,
               width: roundedViewfinderSize
             }}
-          >
-            <UntypedBarCodeScanner
-              barCodeTypes={[BarCodeScanner.Constants.BarCodeType.qr]}
-              onBarCodeScanned={this.handleBarCodeScanned}
-              style={StyleSheet.absoluteFill}
-            />
-          </View>
+          />
         </View>
         <Text
           style={{
