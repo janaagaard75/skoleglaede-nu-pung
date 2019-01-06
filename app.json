@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Skoleglæde.nu Pung",
-    "description": "Wallet app for a game for Skoleglæde.nu.",
+    "description": "Virtual wallet for a game about private economy created by Skoleglæde.nu.",
     "slug": "skoleglaede-nu-pung",
     "privacy": "public",
     "sdkVersion": "31.0.0",
@@ -18,8 +18,16 @@
       "package": "nu.skoleglaede.pung"
     },
     "ios": {
+      "buildNumber": "1.0.0",
       "bundleIdentifier": "nu.skoleglaede.pung",
-      "supportsTablet": true
+      "infoPlist": {
+        "NSCameraUsageDescription": "This app uses the camera to scan QR codes. The app does not get access to your pictures."
+      },
+      "supportsTablet": false,
+      "usesIcloudStorage": false
+    },
+    "locales": {
+      "da": "./da.json"
     },
     "packagerOpts": {
       "assetExts": [
