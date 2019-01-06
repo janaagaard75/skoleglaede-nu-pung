@@ -3,6 +3,15 @@
   "editor.tabSize": 2,
   "javascript.preferences.quoteStyle": "double",
   "javascript.validate.enable": false,
+  "spellright.documentTypes": [
+    "latex",
+    "markdown",
+    "plaintext"
+  ],
+  "spellright.language": [
+    "da",
+    "en"
+  ],
   "tslint.enable": true,
   "tslint.exclude": "/node_modules/**/*",
   "tslint.ignoreDefinitionFiles": false,
