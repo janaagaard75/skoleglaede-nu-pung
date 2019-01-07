@@ -5,7 +5,7 @@
     "slug": "skoleglaede-nu-pung",
     "privacy": "public",
     "sdkVersion": "31.0.0",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "orientation": "portrait",
     "primaryColor": "#fff",
     "icon": "./assets/app-icon.png",
