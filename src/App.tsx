@@ -1,5 +1,6 @@
 import { createStackNavigator } from "react-navigation"
 
+import { BrokeScreen } from "./BrokeScreen"
 import { MainScreen } from "./MainScreen"
 import { ResetScreen } from "./ResetScreen"
 import { ScannerScreen } from "./ScannerScreen"
@@ -20,6 +21,7 @@ export default createStackNavigator({
     screen: MainScreen
   },
   // tslint:disable-next-line:object-literal-sort-keys
+  BrokeScreen: getSubScreen(BrokeScreen),
   ResetScreen: getSubScreen(ResetScreen),
   ScannerScreen: getSubScreen(ScannerScreen),
   TransferScreen: getSubScreen(TransferScreen)

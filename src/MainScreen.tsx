@@ -83,6 +83,18 @@ export class MainScreen extends Component<NavigationScreenProps, State> {
           }}
         >
           <Button
+            onPress={() => this.props.navigation.navigate("BrokeScreen")}
+            fontSize={16}
+            title="Fallit"
+          />
+        </View>
+        <View
+          style={{
+            marginBottom: 10,
+            paddingHorizontal: 20
+          }}
+        >
+          <Button
             onPress={() => this.props.navigation.navigate("TransferScreen")}
             fontSize={16}
             title="Overfør til opsparing"

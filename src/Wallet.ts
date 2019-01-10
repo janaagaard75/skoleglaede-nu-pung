@@ -32,6 +32,11 @@ export class Wallet {
   private static readonly key = "wallet"
   private static initialized = false
 
+  public static broke() {
+    this._credit = 0
+    this.save()
+  }
+
   public static reset() {
     this._credit = 4000
     this._savings = 0
