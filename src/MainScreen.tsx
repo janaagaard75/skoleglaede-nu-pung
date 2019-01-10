@@ -38,7 +38,7 @@ export class MainScreen extends Component<NavigationScreenProps, State> {
   }
 
   public static navigationOptions = {
-    title: "Skoleglæde.nu pung"
+    title: "Skoleglæde.nu bank"
   }
 
   public render() {

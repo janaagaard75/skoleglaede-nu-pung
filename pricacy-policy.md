@@ -2,7 +2,7 @@
 
 (The privacy polity is available in English below)
 
-App'en *Skoleglæde<span></span>.nu Pung* er lavet og ejet af Jan Aagaard. Det er blevet lavet for [Skoleglæde.nu](https://skoleglæde.nu).
+App'en *Skoleglæde<span></span>.nu Bank* er lavet og ejet af Jan Aagaard. Det er blevet lavet for [Skoleglæde.nu](https://skoleglæde.nu).
 
 Hvis du bruger app'en, så accepterer du denne privathedspolitik.
 
@@ -18,7 +18,7 @@ Du er meget velkommen til at kontakt mig på [support@skoleglæde.nu](mailto:sup
 
 ## Privacy Policy
 
-The app *Skoleglæde<span></span>.nu Pung* is built and owned by Jan Aagaard. It has been created for [Skoleglæde.nu](https://skoleglæde.nu).
+The app *Skoleglæde<span></span>.nu Bank* is built and owned by Jan Aagaard. It has been created for [Skoleglæde.nu](https://skoleglæde.nu).
 
 If you use this app, then you agree to the terms in this policy.
 

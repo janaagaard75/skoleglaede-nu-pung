@@ -1,7 +1,7 @@
 {
   "name": "skoleglaede-nu-pung",
   "version": "0.0.0",
-  "description": "Pung til Skoleglæde.nu.",
+  "description": "Virtuel pung til et spil for Skoleglæde.nu.",
   "author": "Jan Aagaard <jan@aagaard.net>",
   "private": false,
   "license": "MIT",

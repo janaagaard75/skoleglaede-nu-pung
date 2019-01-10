@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "Skoleglæde.nu Pung",
+    "name": "Skoleglæde.nu Bank",
     "description": "Virtual wallet for a game about private economy created by Skoleglæde.nu.",
-    "slug": "skoleglaede-nu-pung",
+    "slug": "skoleglaede-nu-ank",
     "privacy": "public",
     "sdkVersion": "31.0.0",
     "version": "1.0.1",
