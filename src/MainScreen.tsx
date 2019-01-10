@@ -1,6 +1,8 @@
 import React from "react"
 import { Component } from "react"
 import { Dimensions } from "react-native"
+// tslint:disable-next-line:no-implicit-dependencies
+import { FontAwesome } from "@expo/vector-icons"
 import { ifIphoneX } from "react-native-iphone-x-helper"
 import { NavigationScreenProps } from "react-navigation"
 import { Text } from "react-native"
@@ -67,8 +69,8 @@ export class MainScreen extends Component<NavigationScreenProps, State> {
             flex: 1
           }}
         />
-        {this.renderAccount("Konto", this.state.credit)}
-        {this.renderAccount("Bankboks", this.state.savings)}
+        {this.renderAccount("credit-card", "Konto", this.state.credit)}
+        {this.renderAccount("bank", "Opsparing", this.state.savings)}
         <View
           style={{
             flex: 1
@@ -83,7 +85,7 @@ export class MainScreen extends Component<NavigationScreenProps, State> {
           <Button
             onPress={() => this.props.navigation.navigate("TransferScreen")}
             fontSize={16}
-            title="Overfør til bankboks"
+            title="Overfør til opsparing"
           />
         </View>
         <View
@@ -102,7 +104,7 @@ export class MainScreen extends Component<NavigationScreenProps, State> {
     )
   }
 
-  private renderAccount(title: string, amount: number): JSX.Element {
+  private renderAccount(icon: string, title: string, amount: number): JSX.Element {
     return (
       <View
         style={{
@@ -110,14 +112,30 @@ export class MainScreen extends Component<NavigationScreenProps, State> {
           justifyContent: "center"
         }}
       >
-        <Text
+        <View
           style={{
-            alignSelf: "center",
-            fontSize: 0.05 * this.state.windowWidth
+            alignItems: "center",
+            flexDirection: "row",
+            justifyContent: "center"
           }}
         >
-          {title}
-        </Text>
+          <FontAwesome
+            style={{
+              fontSize: 0.05 * this.state.windowWidth,
+              marginRight: 5,
+              width: 24
+            }}
+            name={icon}
+          />
+          <Text
+            style={{
+              alignSelf: "center",
+              fontSize: 0.05 * this.state.windowWidth
+            }}
+          >
+            {title}
+          </Text>
+        </View>
         <Text
           style={{
             alignSelf: "center",
