@@ -68,7 +68,7 @@ export class MainScreen extends Component<NavigationScreenProps, State> {
           }}
         />
         {this.renderAccount("Konto", this.state.credit)}
-        {this.renderAccount("Opsparing", this.state.savings)}
+        {this.renderAccount("Bankboks", this.state.savings)}
         <View
           style={{
             flex: 1
@@ -83,7 +83,7 @@ export class MainScreen extends Component<NavigationScreenProps, State> {
           <Button
             onPress={() => this.props.navigation.navigate("TransferScreen")}
             fontSize={16}
-            title="Overfør til opsparing"
+            title="Overfør til bankboks"
           />
         </View>
         <View
