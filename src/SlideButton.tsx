@@ -127,8 +127,8 @@ export class SlideButton extends Component<Props, State> {
                 borderWidth: 2,
                 color: this.props.disabled ? "#999" : "#000",
                 fontSize: 16,
-                paddingHorizontal: 6,
-                paddingVertical: 2
+                paddingHorizontal: 8,
+                paddingVertical: 6
               }}
             >
               {this.props.title}

@@ -31,10 +31,19 @@ export class ResetScreen extends Component<NavigationScreenProps> {
             paddingHorizontal: 10
           }}
         >
-          <Text>
+          <Text
+            style={{
+              fontSize: 16
+            }}
+          >
             Nultil din konto til 4.000 kroner og din bankboks til 0 kroner?
           </Text>
-          <Text style={{ marginTop: 10 }}>
+          <Text
+            style={{
+              fontSize: 16,
+              marginTop: 10
+            }}
+          >
             Denne handling kan ikke fortrydes.
           </Text>
         </View>

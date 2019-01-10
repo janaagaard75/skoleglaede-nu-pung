@@ -23,7 +23,7 @@ export class Button extends Component<Props> {
           borderColor: this.props.disabled ? "#999" : "#000",
           borderWidth: 2,
           paddingHorizontal: Math.round(this.props.fontSize / 16 * 11),
-          paddingVertical: Math.round(this.props.fontSize / 16 * 6),
+          paddingVertical: Math.round(this.props.fontSize / 16 * 9),
           width: "100%"
         }}
       >
