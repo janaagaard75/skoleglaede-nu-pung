@@ -1,7 +1,7 @@
 {
-  "name": "skoleglaede-nu-pung",
+  "name": "skoleglaede-nu-bank",
   "version": "0.0.0",
-  "description": "Virtuel pung til et spil for Skoleglæde.nu.",
+  "description": "Wallet for a game for Skoleglæde.nu.",
   "author": "Jan Aagaard <jan@aagaard.net>",
   "private": false,
   "license": "MIT",

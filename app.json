@@ -2,7 +2,7 @@
   "expo": {
     "name": "Skoleglæde.nu Bank",
     "description": "Virtual wallet for a game about private economy created by Skoleglæde.nu.",
-    "slug": "skoleglaede-nu-pung",
+    "slug": "skoleglaede-nu-bank",
     "privacy": "public",
     "sdkVersion": "32.0.0",
     "version": "1.0.1",
@@ -15,11 +15,11 @@
       "resizeMode": "contain"
     },
     "android": {
-      "package": "nu.skoleglaede.pung"
+      "package": "nu.skoleglaede.bank"
     },
     "ios": {
       "buildNumber": "1.0.0",
-      "bundleIdentifier": "nu.skoleglaede.pung",
+      "bundleIdentifier": "nu.skoleglaede.bank",
       "infoPlist": {
         "NSCameraUsageDescription": "This app uses the camera to scan QR codes. The app does not get access to your pictures."
       },
@@ -35,6 +35,6 @@
         "mp4"
       ]
     },
-    "githubUrl": "https://github.com/janaagaard75/skoleglaede-nu-pung"
+    "githubUrl": "https://github.com/janaagaard75/skoleglaede-nu-bank"
   }
 }
