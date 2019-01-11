@@ -1,3 +1,4 @@
+import { createAppContainer } from "react-navigation"
 import { createStackNavigator } from "react-navigation"
 
 import { BrokeScreen } from "./BrokeScreen"
@@ -6,7 +7,7 @@ import { ResetScreen } from "./ResetScreen"
 import { ScannerScreen } from "./ScannerScreen"
 import { TransferScreen } from "./TranferScreen"
 
-export default createStackNavigator({
+const mainNavigator = createStackNavigator({
   MainScreen: {
     navigationOptions: () => ({
       headerBackTitle: "Tilbage",
@@ -26,6 +27,8 @@ export default createStackNavigator({
   ScannerScreen: getSubScreen(ScannerScreen),
   TransferScreen: getSubScreen(TransferScreen)
 })
+
+export default createAppContainer(mainNavigator)
 
 function getSubScreen(screen: any) {
   return ({
