@@ -21,15 +21,14 @@ If you're on a Mac and have Xcode installed, you can run the app using the iOS S
 
 ## To Do
 
-- Show amounts on the scanner screen(?)
 - Sound effects
 - Animate amounts
   - Slide up and down when adding or subtracting
   - Fade out and in when resetting
 - Better layout
   - Commas on numbers should align
-  - Reset screen is too empty
-  - Show amounts on reset screen?
+  - Broke and reset screens are too empty
+- Show current amounts throughout the app?
 - TestFlight on iOS
 - Actual hash check
 - Equivalent for TestFlight on Android
