@@ -1,5 +1,25 @@
 # Skoleglæde.nu Bank
 
+## Privathedspolitik
+
+(The privacy polity is available in English below)
+
+App'en *Skoleglæde<span></span>.nu Bank* er lavet og ejet af Jan Aagaard. Det er blevet lavet for [Skoleglæde.nu](https://skoleglæde.nu).
+
+Hvis du bruger app'en, så accepterer du denne privathedspolitik.
+
+App'en er gratis, men de services, som Skoleglæde.nu tilbyder er ikke.
+
+App'en sporer ikke brug af den og indsamler ikke nogle data om brugerne af den.
+
+App'en skal have adgang til at bruge kameraet for at kunne scanne QR-koder. (Apps får ikke adgang til den billeder når de får adgang til kameraet.)
+
+## Kontakt Os
+
+Du er meget velkommen til at kontakt mig os [support@skoleglæde.nu](mailto:support@skoleglæde.nu), hvis du har spørgsmål eller ændringsforslag til denne privathedspolitik.
+
+---
+
 ## Privacy Policy
 
 The app *Skoleglæde<span></span>.nu Bank* is built and owned by Jan Aagaard. It has been created for [Skoleglæde.nu](https://skoleglæde.nu).
