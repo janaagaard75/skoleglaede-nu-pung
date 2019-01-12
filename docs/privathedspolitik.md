@@ -16,7 +16,7 @@ Du er meget velkommen til at kontakte os [support@skoleglæde.nu](mailto:support
 
 ---
 
-## _Privacy Policy_
+## _Privacy policy_
 
 _The app **Skoleglæde<span></span>.nu Bank** is built and owned by Jan Aagaard. It has been created for [Skoleglæde.nu](https://skoleglæde.nu)._
 
