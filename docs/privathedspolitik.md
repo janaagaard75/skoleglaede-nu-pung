@@ -12,7 +12,7 @@ App'en skal have adgang til at bruge kameraet for at kunne scanne QR-koder. (App
 
 ### Kontakt Os
 
-Du er meget velkommen til at kontakt os [support@skoleglæde.nu](mailto:support@skoleglæde.nu), hvis du har spørgsmål eller ændringsforslag til denne privathedspolitik.
+Du er meget velkommen til at kontakte os [support@skoleglæde.nu](mailto:support@skoleglæde.nu), hvis du har spørgsmål eller ændringsforslag til denne privathedspolitik.
 
 ---
 
