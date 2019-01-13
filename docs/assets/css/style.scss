@@ -2,6 +2,7 @@
 ---
 
 @import "{{ site.theme }}";
+@import "primer-buttons/index.scss";
 
 .markdown-body {
   h1,
