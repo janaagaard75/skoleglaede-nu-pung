@@ -1,9 +1,10 @@
 ## Teknisk assistance
 
-<form enctype="text/plain" method="get" action="mailto:support@skoleglæde.nu">
-  <input type="email" placeholder="Emailadresse">
-  <textarea name="comments"></textarea>
-  <button type="submit">Send</button>
+<form action="https://formspree.io/support@skoleglæde.nu" method="POST">
+  <input type="text" name="name">
+  <input type="email" name="_replyto">
+  <textarea name="message"></textarea>
+  <input type="submit" value="Send">
 </form>
 
 Du er meget velkommen til at kontakte os [support@skoleglæde.nu](mailto:support@skoleglæde.nu), hvis du har spørgsmål eller forslag til app'en.
