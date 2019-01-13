@@ -1,0 +1,11 @@
+{
+  "name": "skoleglaede-nu-bank-docs",
+  "version": "1.0.0",
+  "description": "Website for the app Skoleglæde.nu Bank",
+  "main": "index.js",
+  "author": "Jan Aagaard <jan@aagaard.net>",
+  "license": "MIT",
+  "dependencies": {
+    "primer": "10.10.4"
+  }
+}
