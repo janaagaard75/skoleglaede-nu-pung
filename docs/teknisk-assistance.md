@@ -1,6 +1,6 @@
 ## Teknisk assistance
 
-<form action="https://formspree.io/support@skoleglæde.nu" method="POST">
+<form action="https://formspree.io/support@xn--skoleglde-m3a.nu" method="POST">
   <input type="text" name="name">
   <input type="email" name="_replyto">
   <textarea name="message"></textarea>
