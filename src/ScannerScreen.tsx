@@ -13,9 +13,6 @@ import { QrCodeParser } from "./actions/QrCodeParser"
 import { SlideButton } from "./SlideButton"
 import { Wallet } from "./Wallet"
 
-// The type definitions for BarCodeScanner are unfortunately not correct.
-const UntypedBarCodeScanner = BarCodeScanner as any
-
 enum PermissionState {
   Requesting,
   Denied,
@@ -85,7 +82,7 @@ export class ScannerScreen extends Component<NavigationScreenProps, State> {
             justifyContent: "center"
           }}
         >
-          <UntypedBarCodeScanner
+          <BarCodeScanner
             barCodeTypes={[BarCodeScanner.Constants.BarCodeType.qr]}
             onBarCodeScanned={this.handleBarCodeScanned}
             style={{
