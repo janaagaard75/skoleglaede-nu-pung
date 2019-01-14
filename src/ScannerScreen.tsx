@@ -68,6 +68,7 @@ export class ScannerScreen extends Component<NavigationScreenProps, State> {
           }}
         >
           <Text>App'en skal have adgang til at bruge kameraet for at den kan scanne QR-koder. Du giver app'en adgang inde i indstillingerne på din telefon.</Text>
+          {/* Settings > Privacy > Camera */}
         </View>
       )
     }
