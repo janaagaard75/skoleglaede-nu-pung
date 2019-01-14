@@ -10,7 +10,7 @@
     "android": "expo start --android",
     "build": "expo build:ios",
     "ios": "expo start --ios",
-    "lint": "tslint src/**/*.ts",
+    "lint": "tslint src/**/*.ts src/**/*.tsx",
     "start": "expo start",
     "validate": "yarn run lint && tsc --noEmit"
   },
