@@ -5,7 +5,6 @@ import { NavigationScreenProps } from "react-navigation"
 import { Text } from "react-native"
 import { View } from "react-native"
 
-import { Formatter } from "./Formatter"
 import { SlideButton } from "./SlideButton"
 import { Wallet } from "./Wallet"
 
