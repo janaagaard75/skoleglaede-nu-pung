@@ -4,6 +4,8 @@
 @import "{{ site.theme }}";
 
 .markdown-body {
+  font-family: "Raleway", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+
   h1,
   h2 {
     border-bottom: none;
