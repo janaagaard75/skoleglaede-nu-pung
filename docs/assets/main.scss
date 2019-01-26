@@ -3,6 +3,11 @@
 
 @import "{{ site.theme }}";
 
+header {
+  background-color: #67b387;
+  color: white;
+}
+
 .markdown-body {
   font-family: "Raleway", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
 
