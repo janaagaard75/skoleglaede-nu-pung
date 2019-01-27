@@ -12,6 +12,14 @@ header {
   }
 }
 
+.cursive {
+  -webkit-font-feature-settings: "liga" 1;
+  font-family: "Lobster Two", cursive;
+  font-feature-settings: "liga";
+  font-style: italic;
+  font-weight: normal;
+}
+
 .markdown-body {
   font-family: "Raleway", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
 
