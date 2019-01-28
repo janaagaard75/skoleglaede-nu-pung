@@ -1,6 +1,6 @@
 [![Apple App Store](./assets/app-store-badge.svg)](https://l.facebook.com/l.php?u=http%3A%2F%2Fitunes.apple.com%2Fapp%2Fid1449294414%3Ffbclid%3DIwAR0nuWvrn6_XsgCrYsjo-dVbq-Qm44HSxH9LRCZ0-4M6DX32XVOCw6kk8UM&h=AT36MQUtcRLWWK8irgwQmzcbH4fIn9Tr8SWbLHoTpNpRvVbgD8jnE0MpCWy7oJ9dHi1afvT0Zeog9QfDMfaXBM2xpKIl4aMc8uKm0Vbc_1pwl3HyK6j0nPdJijthKi4E4Q6tN_yU3pz9FDbK)
 
-<a href='https://play.google.com/store/apps/details?id=nu.skoleglaede.bank&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Nu på Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/da_badge_web_generic.png' style="height: 40px; width: 120px"/></a>
+<a href='https://play.google.com/store/apps/details?id=nu.skoleglaede.bank&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Nu på Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/da_badge_web_generic.png' style="height: 60px; width: 160px; margin-left: -10px;"/></a>
 
 ## [Teknisk assistance / _Support_](./teknisk-assistance)
 
