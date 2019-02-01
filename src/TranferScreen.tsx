@@ -49,7 +49,7 @@ export class TransferScreen extends Component<NavigationScreenProps, State> {
           }}
         >
           <Text>
-            Vælg hvor mange penge du til overføre fra din konto til din opsparing.
+            Vælg hvor mange penge du vil overføre fra din konto til din opsparing.
           </Text>
           <Text style={{ marginTop: 15 }}>
             Konto: {Formatter.formatAsCurrency(Wallet.credit)}
