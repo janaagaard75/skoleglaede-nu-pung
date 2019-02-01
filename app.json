@@ -5,7 +5,7 @@
     "slug": "skoleglaede-nu-bank",
     "privacy": "public",
     "sdkVersion": "32.0.0",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "orientation": "portrait",
     "primaryColor": "#fff",
     "icon": "./assets/app-icon.png",
@@ -18,7 +18,7 @@
       "package": "nu.skoleglaede.bank"
     },
     "ios": {
-      "buildNumber": "1.0.2",
+      "buildNumber": "1.0.3",
       "bundleIdentifier": "nu.skoleglaede.bank",
       "infoPlist": {
         "NSCameraUsageDescription": "This app uses the camera to scan QR codes. The app does not get access to your pictures."
