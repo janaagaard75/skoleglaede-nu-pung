@@ -9,11 +9,12 @@
   "scripts": {
     "android": "expo start --android",
     "build": "expo build:ios",
+    "check-types": "tsc --noEmit",
     "ios": "expo start --ios",
     "lint": "tslint src/**/*.ts src/**/*.tsx",
     "publish": "expo publish",
     "start": "expo start",
-    "validate": "yarn run lint && tsc --noEmit"
+    "validate": "yarn run lint && yarn run check-types"
   },
   "dependencies": {
     "expo": "32.0.3",
