@@ -8,6 +8,11 @@
     "markdown",
     "plaintext"
   ],
+  "spellright.ignoreFiles": [
+    "**/.gitignore",
+    "**/.spellignore",
+    "yarn.lock"
+  ],
   "spellright.language": [
     "da",
     "en"
