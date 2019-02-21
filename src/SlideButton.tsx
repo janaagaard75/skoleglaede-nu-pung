@@ -131,7 +131,7 @@ export class SlideButton extends Component<Props, State> {
                 paddingVertical: 6
               }}
             >
-              {this.props.title}
+              {this.props.title} &#x21E8;
             </Text>
           </Animated.View>
         </View>
