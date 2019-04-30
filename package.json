@@ -14,7 +14,7 @@
     "lint": "tslint src/**/*.ts src/**/*.tsx",
     "publish": "expo publish",
     "start": "expo start",
-    "validate": "yarn run lint && yarn run check-types"
+    "validate": "yarn run check-types && yarn run lint"
   },
   "dependencies": {
     "expo": "32.0.3",

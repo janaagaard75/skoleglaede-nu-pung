@@ -23,9 +23,9 @@ jobs:
             - ~/.cache/yarn
 
       - run:
-          name: Lint the code
-          command: yarn run lint
-
-      - run:
           name: Check TypeScript types
           command: yarn run check-types
+
+      - run:
+          name: Lint the code
+          command: yarn run lint
