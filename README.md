@@ -1,6 +1,6 @@
 # Wallet for Skoleglæde.nu
 
-Wallet with virtual money for Skoleglæde.nu.
+Wallet with virtual money for [Skoleglæde.nu](https://skoleglæde.nu/).
 
 ## Prerequisites
 
