@@ -3,7 +3,7 @@
   "version": "1.0.3",
   "description": "Virtual wallet for a game about private economy created by Skoleglæde.nu.",
   "author": "Jan Aagaard <jan@aagaard.net>",
-  "private": false,
+  "private": true,
   "license": "MIT",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
