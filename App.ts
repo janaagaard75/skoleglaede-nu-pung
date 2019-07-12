@@ -1,8 +1,8 @@
-import App from "./src/App"
-import { Wallet } from "./src/Wallet"
+import App from "./src/App";
+import { Wallet } from "./src/Wallet";
 
 (async () => {
-  await Wallet.initialize()
-})()
+  await Wallet.initialize();
+})();
 
-export default App
+export default App;
