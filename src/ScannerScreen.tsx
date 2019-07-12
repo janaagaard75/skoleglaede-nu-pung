@@ -1,5 +1,5 @@
-import React from "react";
 import { BarCodeScanner } from "expo";
+import * as React from "react";
 import { Component } from "react";
 import { Dimensions } from "react-native";
 import { NavigationScreenProps } from "react-navigation";

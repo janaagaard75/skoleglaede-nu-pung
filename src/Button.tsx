@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import { Component } from "react";
 import { Text } from "react-native";
 import { TouchableOpacity } from "react-native";
