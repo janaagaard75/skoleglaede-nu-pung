@@ -17,24 +17,22 @@
     "validate": "yarn run check-types && yarn run lint"
   },
   "dependencies": {
-    "expo": "32.0.3",
-    "react": "16.5.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-31.0.1.tar.gz",
-    "react-native-iphone-x-helper": "1.2.0",
-    "react-navigation": "3.1.2",
-    "tslib": "1.9.3"
+    "expo": "33.0.7",
+    "react": "16.8.3",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-33.0.0.tar.gz",
+    "react-native-iphone-x-helper": "1.2.1",
+    "react-navigation": "3.11.0",
+    "tslib": "1.10.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0-0",
-    "@types/expo__vector-icons": "9.0.0",
-    "@types/fbemitter": "2.0.32",
-    "@types/react": "16.8.1",
-    "@types/react-native": "0.57.32",
-    "@types/react-navigation": "3.0.1",
-    "prop-types": "15.6.2",
-    "tslint": "5.12.1",
+    "@babel/core": "^7.5.4",
+    "@types/expo__vector-icons": "9.0.1",
+    "@types/react": "16.8.23",
+    "@types/react-native": "0.60.0",
+    "@types/react-navigation": "3.0.7",
+    "tslint": "5.18.0",
     "tslint-eslint-rules": "5.4.0",
-    "tslint-react": "3.6.0",
-    "typescript": "3.3.1"
+    "tslint-react": "4.0.0",
+    "typescript": "3.5.3"
   }
 }
