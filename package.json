@@ -13,6 +13,7 @@
     "format": "prettier --write \"{./,./src/**/}*.{js,json,ts,tsx}\"",
     "ios": "expo start --ios",
     "lint": "tslint src/**/*.ts src/**/*.tsx",
+    "optimize-assets": "expo optimize",
     "publish": "expo publish",
     "start": "expo start",
     "validate": "yarn run check-types && yarn run lint"
@@ -32,6 +33,7 @@
     "@types/react": "16.8.1",
     "@types/react-native": "0.57.32",
     "@types/react-navigation": "3.0.1",
+    "expo-cli": "2.21.2",
     "prettier": "1.18.2",
     "prop-types": "15.6.2",
     "tslint": "5.12.1",
