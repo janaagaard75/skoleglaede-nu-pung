@@ -9,7 +9,7 @@
   "scripts": {
     "android": "expo start --android",
     "build": "expo build:ios",
-    "check-types": "tsc --noEmit",
+    "check-types": "tsc",
     "ios": "expo start --ios",
     "lint": "tslint src/**/*.ts src/**/*.tsx",
     "publish": "expo publish",
