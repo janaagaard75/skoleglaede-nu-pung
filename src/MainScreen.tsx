@@ -1,7 +1,6 @@
 import React from "react";
 import { Component } from "react";
 import { Dimensions } from "react-native";
-// tslint:disable-next-line:no-implicit-dependencies
 import { FontAwesome } from "@expo/vector-icons";
 import { ifIphoneX } from "react-native-iphone-x-helper";
 import { NavigationScreenProps } from "react-navigation";

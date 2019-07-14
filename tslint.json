@@ -5,7 +5,7 @@
     "array-type": [true, "generic"],
     "interface-name": false,
     "no-duplicate-imports": false,
-    "no-implicit-dependencies": [true, "dev"],
+    "no-implicit-dependencies": false,
     "member-ordering": false,
     "object-literal-shorthand": [true, "never"],
     "ordered-imports": false,
