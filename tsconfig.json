@@ -1,25 +1,21 @@
 {
   "compilerOptions": {
+    "baseUrl": "./src",
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
     "importHelpers": true,
     "jsx": "react-native",
-    "lib": [
-      "es2017"
-    ],
+    "lib": ["dom", "esnext"],
     "module": "es2015",
     "moduleResolution": "node",
     "noEmit": true,
     "noEmitHelpers": true,
+    "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
     "noUnusedLocals": true,
     "skipLibCheck": true,
-    "sourceMap": false, // Something else (Babel?) is creating the necessary source maps.
     "strict": true,
-    "target": "es2017"
-  },
-  "exclude": [
-    "node_modules"
-  ]
+    "target": "esnext"
+  }
 }
