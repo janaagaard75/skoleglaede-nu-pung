@@ -2,8 +2,6 @@
 {
   "editor.formatOnSave": true,
   "editor.tabSize": 2,
-  "javascript.preferences.quoteStyle": "double",
-  "javascript.validate.enable": false,
   "spellright.documentTypes": ["markdown", "plaintext"],
   "spellright.ignoreFiles": ["**/.gitignore", "**/.spellignore", "yarn.lock"],
   "spellright.language": ["da", "en"],
