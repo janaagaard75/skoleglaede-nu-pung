@@ -7,6 +7,5 @@
   "spellright.documentTypes": ["latex", "markdown", "plaintext"],
   "spellright.ignoreFiles": ["**/.gitignore", "**/.spellignore", "yarn.lock"],
   "spellright.language": ["da", "en"],
-  "typescript.preferences.quoteStyle": "double",
   "typescript.tsdk": "node_modules/typescript/lib"
 }
