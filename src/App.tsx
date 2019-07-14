@@ -31,7 +31,7 @@ const mainNavigator = createStackNavigator({
 export default createAppContainer(mainNavigator)
 
 function getSubScreen(screen: any) {
-  return ({
+  return {
     navigationOptions: () => ({
       headerBackTitleStyle: {
         color: "#fff"
@@ -46,5 +46,5 @@ function getSubScreen(screen: any) {
       }
     }),
     screen: screen
-  })
+  }
 }

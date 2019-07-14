@@ -4,10 +4,10 @@ import { Text } from "react-native"
 import { TouchableOpacity } from "react-native"
 
 interface Props {
-  fontSize: number,
-  disabled?: boolean,
-  onPress: () => void,
-  selected?: boolean,
+  fontSize: number
+  disabled?: boolean
+  onPress: () => void
+  selected?: boolean
   title: string
 }
 
@@ -22,8 +22,8 @@ export class Button extends Component<Props> {
           backgroundColor: this.props.selected ? "#bbb" : "transparent",
           borderColor: this.props.disabled ? "#999" : "#000",
           borderWidth: 2,
-          paddingHorizontal: Math.round(this.props.fontSize / 16 * 11),
-          paddingVertical: Math.round(this.props.fontSize / 16 * 9),
+          paddingHorizontal: Math.round((this.props.fontSize / 16) * 11),
+          paddingVertical: Math.round((this.props.fontSize / 16) * 9),
           width: "100%"
         }}
       >

@@ -11,7 +11,7 @@ import { View } from "react-native"
 
 interface Props {
   disabled?: boolean
-  onTrigger: () => void,
+  onTrigger: () => void
   title: string
 }
 
@@ -23,8 +23,8 @@ enum SliderState {
 }
 
 interface State {
-  buttonSize: LayoutRectangle | undefined,
-  sliderSize: LayoutRectangle | undefined,
+  buttonSize: LayoutRectangle | undefined
+  sliderSize: LayoutRectangle | undefined
   sliderState: SliderState
 }
 
@@ -50,15 +50,12 @@ export class SlideButton extends Component<Props, State> {
           sliderState: SliderState.Animating
         })
 
-        Animated.timing(
-          this.animatedPosition,
-          {
-            duration: 100,
-            easing: Easing.ease,
-            toValue: 0,
-            useNativeDriver: true
-          }
-        ).start(() => {
+        Animated.timing(this.animatedPosition, {
+          duration: 100,
+          easing: Easing.ease,
+          toValue: 0,
+          useNativeDriver: true
+        }).start(() => {
           if (this.state.sliderState !== SliderState.DropWillCancel) {
             this.setState({
               sliderState: SliderState.Idle
@@ -67,14 +64,18 @@ export class SlideButton extends Component<Props, State> {
         })
       },
       onPanResponderMove: (e, gestureEvent) => {
-        if (this.state.buttonSize === undefined || this.state.sliderSize === undefined) {
+        if (
+          this.state.buttonSize === undefined ||
+          this.state.sliderSize === undefined
+        ) {
           throw new Error("Both buttonSize and sliderSize must be defined.")
         }
 
-        const maximumDx = this.state.sliderSize.width - this.state.buttonSize.width
+        const maximumDx =
+          this.state.sliderSize.width - this.state.buttonSize.width
         const restrictedDx = this.restrict(gestureEvent.dx, 0, maximumDx)
         const dropZoneWidth = 20
-        const withinDropZone = (maximumDx - restrictedDx) <= dropZoneWidth
+        const withinDropZone = maximumDx - restrictedDx <= dropZoneWidth
         this.setState({
           sliderState: withinDropZone
             ? SliderState.DropWillTriggerAction
@@ -97,9 +98,11 @@ export class SlideButton extends Component<Props, State> {
 
   public render() {
     const animatedViewStyle = {
-      transform: [{
-        translateX: this.animatedPosition
-      }]
+      transform: [
+        {
+          translateX: this.animatedPosition
+        }
+      ]
     }
 
     return (

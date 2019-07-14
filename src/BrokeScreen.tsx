@@ -54,10 +54,7 @@ export class BrokeScreen extends Component<NavigationScreenProps> {
             width: "100%"
           }}
         >
-          <SlideButton
-            onTrigger={() => this.broke()}
-            title="Fallit"
-          />
+          <SlideButton onTrigger={() => this.broke()} title="Fallit" />
         </View>
       </View>
     )

@@ -49,7 +49,8 @@ export class TransferScreen extends Component<NavigationScreenProps, State> {
           }}
         >
           <Text>
-            Vælg hvor mange penge du vil overføre fra din konto til din opsparing.
+            Vælg hvor mange penge du vil overføre fra din konto til din
+            opsparing.
           </Text>
           <Text style={{ marginTop: 15 }}>
             Konto: {Formatter.formatAsCurrency(Wallet.credit)}
@@ -78,10 +79,7 @@ export class TransferScreen extends Component<NavigationScreenProps, State> {
             width: "100%"
           }}
         >
-          <SlideButton
-            onTrigger={() => this.transfer()}
-            title="Overfør"
-          />
+          <SlideButton onTrigger={() => this.transfer()} title="Overfør" />
         </View>
       </View>
     )

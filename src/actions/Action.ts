@@ -1,9 +1,7 @@
 import { Formatter } from "../Formatter"
 
 export abstract class Action {
-  constructor(
-    amount: number
-  ) {
+  constructor(amount: number) {
     this.amount = amount
   }
 

@@ -1,7 +1,7 @@
 import App from "./src/App"
 import { Wallet } from "./src/Wallet"
 
-(async () => {
+;(async () => {
   await Wallet.initialize()
 })()
 

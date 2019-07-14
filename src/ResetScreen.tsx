@@ -54,10 +54,7 @@ export class ResetScreen extends Component<NavigationScreenProps> {
             width: "100%"
           }}
         >
-          <SlideButton
-            onTrigger={() => this.resetWallet()}
-            title="Nulstil"
-          />
+          <SlideButton onTrigger={() => this.resetWallet()} title="Nulstil" />
         </View>
       </View>
     )

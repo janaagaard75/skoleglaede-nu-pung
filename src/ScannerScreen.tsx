@@ -45,13 +45,14 @@ export class ScannerScreen extends Component<NavigationScreenProps, State> {
   public async componentDidMount() {
     const { status } = await Permissions.askAsync(Permissions.CAMERA)
     this.setState({
-      cameraPermission: status === "granted" ? PermissionState.Granted : PermissionState.Denied
+      cameraPermission:
+        status === "granted" ? PermissionState.Granted : PermissionState.Denied
     })
   }
 
   public render() {
     if (this.state.cameraPermission === PermissionState.Requesting) {
-      return <View/>
+      return <View />
     }
 
     if (this.state.cameraPermission === PermissionState.Denied) {
@@ -64,7 +65,11 @@ export class ScannerScreen extends Component<NavigationScreenProps, State> {
             paddingHorizontal: 20
           }}
         >
-          <Text>App'en skal have adgang til at bruge kameraet for at den kan scanne QR-koder. Du giver app'en adgang inde i indstillingerne på din telefon.</Text>
+          <Text>
+            App'en skal have adgang til at bruge kameraet for at den kan scanne
+            QR-koder. Du giver app'en adgang inde i indstillingerne på din
+            telefon.
+          </Text>
           {/* Settings > Privacy > Camera */}
         </View>
       )

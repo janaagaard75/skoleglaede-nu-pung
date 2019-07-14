@@ -21,8 +21,7 @@ export class Wallet {
       const wallet = JSON.parse(walletString)
       this._credit = wallet.credit
       this._savings = wallet.savings
-    }
-    catch {
+    } catch {
       this.reset()
     }
   }
