@@ -1,14 +1,14 @@
-import React from "react"
-import { Component } from "react"
-import { Text } from "react-native"
-import { TouchableOpacity } from "react-native"
+import React from "react";
+import { Component } from "react";
+import { Text } from "react-native";
+import { TouchableOpacity } from "react-native";
 
 interface Props {
-  fontSize: number
-  disabled?: boolean
-  onPress: () => void
-  selected?: boolean
-  title: string
+  fontSize: number;
+  disabled?: boolean;
+  onPress: () => void;
+  selected?: boolean;
+  title: string;
 }
 
 export class Button extends Component<Props> {
@@ -36,14 +36,14 @@ export class Button extends Component<Props> {
           {this.props.title}
         </Text>
       </TouchableOpacity>
-    )
+    );
   }
 
   private onPress(): void {
     if (this.props.disabled) {
-      return
+      return;
     }
 
-    this.props.onPress()
+    this.props.onPress();
   }
 }

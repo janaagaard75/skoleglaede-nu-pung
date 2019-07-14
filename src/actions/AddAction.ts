@@ -1,11 +1,11 @@
-import { Action } from "./Action"
+import { Action } from "./Action";
 
 export class AddAction extends Action {
   public get text(): string {
-    return `Tilføj ${this.formattedAmount}?`
+    return `Tilføj ${this.formattedAmount}?`;
   }
 
   public performAction(previousAmount: number): number {
-    return (previousAmount += this.amount)
+    return (previousAmount += this.amount);
   }
 }

@@ -1,17 +1,17 @@
-import { Formatter } from "../Formatter"
+import { Formatter } from "../Formatter";
 
 export abstract class Action {
   constructor(amount: number) {
-    this.amount = amount
+    this.amount = amount;
   }
 
-  public readonly amount: number
+  public readonly amount: number;
 
   protected get formattedAmount(): string {
-    return Formatter.formatAsCurrency(this.amount)
+    return Formatter.formatAsCurrency(this.amount);
   }
 
-  public abstract get text(): string
+  public abstract get text(): string;
 
-  public abstract performAction(previousAmount: number): number
+  public abstract performAction(previousAmount: number): number;
 }

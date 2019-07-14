@@ -6,7 +6,7 @@ export class Formatter {
         .toFixed(2)
         .replace(".", ",")
         .replace(/\d(?=(\d{3})+,)/g, "$&.") + " kr."
-    )
+    );
     // return input.toLocaleString("da-DK", { style: "currency", currency: "DKK" })
   }
 }

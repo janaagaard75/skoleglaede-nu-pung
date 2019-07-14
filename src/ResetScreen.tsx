@@ -1,21 +1,21 @@
-import React from "react"
-import { Component } from "react"
-import { ifIphoneX } from "react-native-iphone-x-helper"
-import { NavigationScreenProps } from "react-navigation"
-import { Text } from "react-native"
-import { View } from "react-native"
+import React from "react";
+import { Component } from "react";
+import { ifIphoneX } from "react-native-iphone-x-helper";
+import { NavigationScreenProps } from "react-navigation";
+import { Text } from "react-native";
+import { View } from "react-native";
 
-import { SlideButton } from "./SlideButton"
-import { Wallet } from "./Wallet"
+import { SlideButton } from "./SlideButton";
+import { Wallet } from "./Wallet";
 
 export class ResetScreen extends Component<NavigationScreenProps> {
   constructor(props: NavigationScreenProps, context?: any) {
-    super(props, context)
+    super(props, context);
   }
 
   public static navigationOptions = {
     title: "Nulstil"
-  }
+  };
 
   public render() {
     return (
@@ -57,11 +57,11 @@ export class ResetScreen extends Component<NavigationScreenProps> {
           <SlideButton onTrigger={() => this.resetWallet()} title="Nulstil" />
         </View>
       </View>
-    )
+    );
   }
 
   private resetWallet() {
-    Wallet.reset()
-    this.props.navigation.goBack()
+    Wallet.reset();
+    this.props.navigation.goBack();
   }
 }

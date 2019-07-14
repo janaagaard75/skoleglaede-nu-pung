@@ -1,11 +1,11 @@
-import { createAppContainer } from "react-navigation"
-import { createStackNavigator } from "react-navigation"
+import { createAppContainer } from "react-navigation";
+import { createStackNavigator } from "react-navigation";
 
-import { BrokeScreen } from "./BrokeScreen"
-import { MainScreen } from "./MainScreen"
-import { ResetScreen } from "./ResetScreen"
-import { ScannerScreen } from "./ScannerScreen"
-import { TransferScreen } from "./TranferScreen"
+import { BrokeScreen } from "./BrokeScreen";
+import { MainScreen } from "./MainScreen";
+import { ResetScreen } from "./ResetScreen";
+import { ScannerScreen } from "./ScannerScreen";
+import { TransferScreen } from "./TranferScreen";
 
 const mainNavigator = createStackNavigator({
   MainScreen: {
@@ -26,9 +26,9 @@ const mainNavigator = createStackNavigator({
   ResetScreen: getSubScreen(ResetScreen),
   ScannerScreen: getSubScreen(ScannerScreen),
   TransferScreen: getSubScreen(TransferScreen)
-})
+});
 
-export default createAppContainer(mainNavigator)
+export default createAppContainer(mainNavigator);
 
 function getSubScreen(screen: any) {
   return {
@@ -46,5 +46,5 @@ function getSubScreen(screen: any) {
       }
     }),
     screen: screen
-  }
+  };
 }
