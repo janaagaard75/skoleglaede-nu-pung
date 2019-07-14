@@ -1,43 +1,16 @@
 {
   "rulesDirectory": ["node_modules/tslint-eslint-rules/dist/rules"],
-  "extends": ["tslint:latest", "tslint-react"],
-  "linterOptions": {
-    "exclude": ["node_modules/**/*"]
-  },
+  "extends": ["tslint:latest", "tslint-react", "tslint-config-prettier"],
   "rules": {
-    "align": [false],
     "array-type": [true, "generic"],
-    "arrow-parens": false,
-    "eofline": false,
-    "interface-name": [true, "never-prefix"],
-    "max-line-length": [false],
-    "member-ordering": [false],
-    "no-bitwise": false,
+    "interface-name": false,
     "no-duplicate-imports": false,
-    "no-null-keyword": true,
-    "no-switch-case-fall-through": true,
-    "object-literal-shorthand": false,
-    "one-line": [false],
-    "ordered-imports": [false],
+    "no-implicit-dependencies": [true, "dev"],
+    "member-ordering": false,
+    "object-literal-shorthand": [true, "never"],
+    "ordered-imports": false,
     "prefer-conditional-expression": false,
-    "semicolon": [true, "never"],
-    "trailing-comma": [
-      true,
-      {
-        "multiline": "never",
-        "singleline": "never"
-      }
-    ],
-    "variable-name": [true, "ban-keywords"],
-    "whitespace": [
-      true,
-      "check-branch",
-      "check-decl",
-      "check-operator",
-      "check-module",
-      "check-separator",
-      "check-type"
-    ],
+    "variable-name": [true, "check-format", "allow-leading-underscore"],
     // ESLint rules for TSLint (tslint-eslint-rules).
     "array-bracket-spacing": [true, "never"],
     "block-spacing": [true, "always"],
