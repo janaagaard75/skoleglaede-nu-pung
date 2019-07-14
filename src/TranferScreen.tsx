@@ -1,14 +1,14 @@
-import React from "react"
-import { Component } from "react"
-import { ifIphoneX } from "react-native-iphone-x-helper"
-import { NavigationScreenProps } from "react-navigation"
-import { Text } from "react-native"
-import { View } from "react-native"
+import * as React from "react";
+import { Component } from "react";
+import { ifIphoneX } from "react-native-iphone-x-helper";
+import { NavigationScreenProps } from "react-navigation";
+import { Text } from "react-native";
+import { View } from "react-native";
 
-import { Button } from "./Button"
-import { Formatter } from "./Formatter"
-import { SlideButton } from "./SlideButton"
-import { Wallet } from "./Wallet"
+import { Button } from "./Button";
+import { Formatter } from "./Formatter";
+import { SlideButton } from "./SlideButton";
+import { Wallet } from "./Wallet";
 
 enum TransferAmount {
   None = 0,
@@ -18,21 +18,21 @@ enum TransferAmount {
 }
 
 interface State {
-  selectedTransfer: TransferAmount
+  selectedTransfer: TransferAmount;
 }
 
 export class TransferScreen extends Component<NavigationScreenProps, State> {
   constructor(props: NavigationScreenProps, context?: any) {
-    super(props, context)
+    super(props, context);
 
     this.state = {
       selectedTransfer: TransferAmount.None
-    }
+    };
   }
 
   public static navigationOptions = {
     title: "Overfør"
-  }
+  };
 
   public render() {
     return (
@@ -49,7 +49,8 @@ export class TransferScreen extends Component<NavigationScreenProps, State> {
           }}
         >
           <Text>
-            Vælg hvor mange penge du vil overføre fra din konto til din opsparing.
+            Vælg hvor mange penge du vil overføre fra din konto til din
+            opsparing.
           </Text>
           <Text style={{ marginTop: 15 }}>
             Konto: {Formatter.formatAsCurrency(Wallet.credit)}
@@ -78,17 +79,14 @@ export class TransferScreen extends Component<NavigationScreenProps, State> {
             width: "100%"
           }}
         >
-          <SlideButton
-            onTrigger={() => this.transfer()}
-            title="Overfør"
-          />
+          <SlideButton onTrigger={() => this.transfer()} title="Overfør" />
         </View>
       </View>
-    )
+    );
   }
 
   private renderTransferAmount(amount: TransferAmount) {
-    const enabled = Wallet.transferToSavingsAllowed(amount)
+    const enabled = Wallet.transferToSavingsAllowed(amount);
 
     return (
       <View
@@ -105,11 +103,11 @@ export class TransferScreen extends Component<NavigationScreenProps, State> {
           title={Formatter.formatAsCurrency(amount)}
         />
       </View>
-    )
+    );
   }
 
   private transfer() {
-    Wallet.transferToSavings(this.state.selectedTransfer)
-    this.props.navigation.goBack()
+    Wallet.transferToSavings(this.state.selectedTransfer);
+    this.props.navigation.goBack();
   }
 }

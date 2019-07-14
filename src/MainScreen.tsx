@@ -1,47 +1,44 @@
-import React from "react"
-import { Component } from "react"
-import { Dimensions } from "react-native"
-// tslint:disable-next-line:no-implicit-dependencies
-import { FontAwesome } from "@expo/vector-icons"
-import { ifIphoneX } from "react-native-iphone-x-helper"
-import { NavigationScreenProps } from "react-navigation"
-import { Text } from "react-native"
-import { View } from "react-native"
+import * as React from "react";
+import { Component } from "react";
+import { Dimensions } from "react-native";
+import { FontAwesome } from "@expo/vector-icons";
+import { ifIphoneX } from "react-native-iphone-x-helper";
+import { NavigationScreenProps } from "react-navigation";
+import { Text } from "react-native";
+import { View } from "react-native";
 
-import { Button } from "./Button"
-import { Formatter } from "./Formatter"
-import { Wallet } from "./Wallet"
+import { Button } from "./Button";
+import { Formatter } from "./Formatter";
+import { Wallet } from "./Wallet";
 
 interface State {
-  credit: number
-  savings: number
-  windowWidth: number
+  credit: number;
+  savings: number;
+  windowWidth: number;
 }
 
 export class MainScreen extends Component<NavigationScreenProps, State> {
   constructor(props: NavigationScreenProps, context?: any) {
-    super(props, context)
+    super(props, context);
 
     this.state = {
       credit: Wallet.credit,
       savings: Wallet.savings,
       windowWidth: Dimensions.get("window").width
-    }
+    };
 
     // react-navigate doesn't allow sharing state between screens, and Wallet is not observable, so we are setting state manually when navigating back to this screen.
-    this.props.navigation.addListener("willFocus",
-      () => {
-        this.setState({
-          credit: Wallet.credit,
-          savings: Wallet.savings
-        })
-      }
-    )
+    this.props.navigation.addListener("willFocus", () => {
+      this.setState({
+        credit: Wallet.credit,
+        savings: Wallet.savings
+      });
+    });
   }
 
   public static navigationOptions = {
     title: "Skoleglæde.nu Bank"
-  }
+  };
 
   public render() {
     return (
@@ -113,10 +110,14 @@ export class MainScreen extends Component<NavigationScreenProps, State> {
           />
         </View>
       </View>
-    )
+    );
   }
 
-  private renderAccount(icon: string, title: string, amount: number): JSX.Element {
+  private renderAccount(
+    icon: string,
+    title: string,
+    amount: number
+  ): JSX.Element {
     return (
       <View
         style={{
@@ -158,6 +159,6 @@ export class MainScreen extends Component<NavigationScreenProps, State> {
           {Formatter.formatAsCurrency(amount)}
         </Text>
       </View>
-    )
+    );
   }
 }

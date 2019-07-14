@@ -1,11 +1,11 @@
-import { Action } from "./Action"
+import { Action } from "./Action";
 
 export class SubtractAction extends Action {
   public get text(): string {
-    return `Fratræk ${this.formattedAmount}?`
+    return `Fratræk ${this.formattedAmount}?`;
   }
 
   public performAction(previousAmount: number): number {
-    return previousAmount -= this.amount
+    return (previousAmount -= this.amount);
   }
 }

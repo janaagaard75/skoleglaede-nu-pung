@@ -11,7 +11,7 @@
     "icon": "./assets/app-icon.png",
     "splash": {
       "backgroundColor": "#fff",
-      "image": "./assets/splash.png",
+      "image": "./assets/splash-screen.png",
       "resizeMode": "contain"
     },
     "android": {
@@ -30,10 +30,7 @@
       "da": "./da.json"
     },
     "packagerOpts": {
-      "assetExts": [
-        "ttf",
-        "mp4"
-      ]
+      "assetExts": ["ttf", "mp4"]
     },
     "githubUrl": "https://github.com/janaagaard75/skoleglaede-nu-bank"
   }

@@ -1,17 +1,17 @@
-import React from "react"
-import { BarCodeScanner } from "expo"
-import { Component } from "react"
-import { Dimensions } from "react-native"
-import { NavigationScreenProps } from "react-navigation"
-import { ifIphoneX } from "react-native-iphone-x-helper"
-import { Permissions } from "expo"
-import { Text } from "react-native"
-import { View } from "react-native"
+import * as React from "react";
+import { BarCodeScanner } from "expo";
+import { Component } from "react";
+import { Dimensions } from "react-native";
+import { NavigationScreenProps } from "react-navigation";
+import { ifIphoneX } from "react-native-iphone-x-helper";
+import { Permissions } from "expo";
+import { Text } from "react-native";
+import { View } from "react-native";
 
-import { Action } from "./actions/Action"
-import { QrCodeParser } from "./actions/QrCodeParser"
-import { SlideButton } from "./SlideButton"
-import { Wallet } from "./Wallet"
+import { Action } from "./actions/Action";
+import { QrCodeParser } from "./actions/QrCodeParser";
+import { SlideButton } from "./SlideButton";
+import { Wallet } from "./Wallet";
 
 enum PermissionState {
   Requesting,
@@ -20,38 +20,39 @@ enum PermissionState {
 }
 
 interface State {
-  cameraPermission: PermissionState
-  codeScanned: boolean
-  currentAction: Action | undefined
-  windowWidth: number
+  cameraPermission: PermissionState;
+  codeScanned: boolean;
+  currentAction: Action | undefined;
+  windowWidth: number;
 }
 
 export class ScannerScreen extends Component<NavigationScreenProps, State> {
   constructor(props: NavigationScreenProps, context?: any) {
-    super(props, context)
+    super(props, context);
 
     this.state = {
       cameraPermission: PermissionState.Requesting,
       codeScanned: false,
       currentAction: undefined,
       windowWidth: Dimensions.get("window").width
-    }
+    };
   }
 
   public static navigationOptions = {
     title: "Scan QR-kode"
-  }
+  };
 
   public async componentDidMount() {
-    const { status } = await Permissions.askAsync(Permissions.CAMERA)
+    const { status } = await Permissions.askAsync(Permissions.CAMERA);
     this.setState({
-      cameraPermission: status === "granted" ? PermissionState.Granted : PermissionState.Denied
-    })
+      cameraPermission:
+        status === "granted" ? PermissionState.Granted : PermissionState.Denied
+    });
   }
 
   public render() {
     if (this.state.cameraPermission === PermissionState.Requesting) {
-      return <View/>
+      return <View />;
     }
 
     if (this.state.cameraPermission === PermissionState.Denied) {
@@ -64,14 +65,18 @@ export class ScannerScreen extends Component<NavigationScreenProps, State> {
             paddingHorizontal: 20
           }}
         >
-          <Text>App'en skal have adgang til at bruge kameraet for at den kan scanne QR-koder. Du giver app'en adgang inde i indstillingerne på din telefon.</Text>
+          <Text>
+            App'en skal have adgang til at bruge kameraet for at den kan scanne
+            QR-koder. Du giver app'en adgang inde i indstillingerne på din
+            telefon.
+          </Text>
           {/* Settings > Privacy > Camera */}
         </View>
-      )
+      );
     }
 
-    const floatViewfinderSize = 0.7 * this.state.windowWidth
-    const roundedViewfinderSize = 2 * Math.round(floatViewfinderSize / 2)
+    const floatViewfinderSize = 0.7 * this.state.windowWidth;
+    const roundedViewfinderSize = 2 * Math.round(floatViewfinderSize / 2);
 
     return (
       <View style={{ flex: 1 }}>
@@ -115,41 +120,41 @@ export class ScannerScreen extends Component<NavigationScreenProps, State> {
           />
         </View>
       </View>
-    )
+    );
   }
 
   private okButtonPressed() {
     if (this.state.currentAction === undefined) {
-      throw new Error("OK button pressed, but currentAction is undefined.")
+      throw new Error("OK button pressed, but currentAction is undefined.");
     }
 
-    Wallet.performAction(this.state.currentAction)
+    Wallet.performAction(this.state.currentAction);
 
     this.setState({
       codeScanned: false,
       currentAction: undefined
-    })
+    });
 
-    this.props.navigation.goBack()
+    this.props.navigation.goBack();
   }
 
   private handleBarCodeScanned = ({ type, data }: any) => {
-    const action = QrCodeParser.parseCodeValue(data)
+    const action = QrCodeParser.parseCodeValue(data);
     this.setState({
       codeScanned: true,
       currentAction: action
-    })
-  }
+    });
+  };
 
   private getText(action: Action | undefined): string {
     if (action === undefined) {
       if (this.state.codeScanned) {
-        return "QR-koden er ikke accepteret."
+        return "QR-koden er ikke accepteret.";
       }
 
-      return "Scan en QR-kode."
+      return "Scan en QR-kode.";
     }
 
-    return action.text
+    return action.text;
   }
 }
