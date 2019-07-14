@@ -1,10 +1,10 @@
+import * as Permissions from "expo-permissions";
 import * as React from "react";
-import { BarCodeScanner } from "expo";
+import { BarCodeScanner } from "expo-barcode-scanner";
 import { Component } from "react";
 import { Dimensions } from "react-native";
 import { NavigationScreenProps } from "react-navigation";
 import { ifIphoneX } from "react-native-iphone-x-helper";
-import { Permissions } from "expo";
 import { Text } from "react-native";
 import { View } from "react-native";
 
