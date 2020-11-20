@@ -19,6 +19,8 @@ If you're on a Mac and have Xcode installed, you can run the app using the iOS S
 
     yarn ios
 
+[QR Codes](qr-codes.pdf)
+
 ## To Do
 
 - Sound effects
