@@ -6,6 +6,10 @@
   "private": true,
   "license": "MIT",
   "main": "node_modules/expo/AppEntry.js",
+  "engines": {
+    "node": ">=12",
+    "yarn": ">=1.22 <2"
+  },
   "scripts": {
     "android": "expo start --android",
     "build": "expo build:ios",
