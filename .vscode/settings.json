@@ -1,9 +1,27 @@
 // Place your settings in this file to overwrite default and user settings.
 {
+  "cSpell.words": [
+    "aagaard",
+    "denne",
+    "fallit",
+    "fortrydes",
+    "fratræk",
+    "ikke",
+    "iphone",
+    "kode",
+    "konto",
+    "nulstil",
+    "opsparing",
+    "overfør",
+    "raleway",
+    "skoleglaede",
+    "skoleglæde",
+    "skoleglæde.nu",
+    "tilbage",
+    "tilføj",
+    "ændres"
+  ],
   "editor.formatOnSave": true,
   "editor.tabSize": 2,
-  "spellright.documentTypes": ["markdown", "plaintext"],
-  "spellright.ignoreFiles": ["**/.gitignore", "**/.spellignore", "yarn.lock"],
-  "spellright.language": ["da", "en"],
   "typescript.tsdk": "node_modules/typescript/lib"
 }
