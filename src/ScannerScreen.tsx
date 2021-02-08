@@ -1,13 +1,10 @@
+import { BarCodeScanner } from "expo-barcode-scanner";
 import * as Permissions from "expo-permissions";
 import * as React from "react";
-import { BarCodeScanner } from "expo-barcode-scanner";
 import { Component } from "react";
-import { Dimensions } from "react-native";
-import { NavigationScreenProps } from "react-navigation";
+import { Dimensions, Text, View } from "react-native";
 import { ifIphoneX } from "react-native-iphone-x-helper";
-import { Text } from "react-native";
-import { View } from "react-native";
-
+import { NavigationScreenProps } from "react-navigation";
 import { Action } from "./actions/Action";
 import { QrCodeParser } from "./actions/QrCodeParser";
 import { SlideButton } from "./SlideButton";
@@ -16,7 +13,7 @@ import { Wallet } from "./Wallet";
 enum PermissionState {
   Requesting,
   Denied,
-  Granted
+  Granted,
 }
 
 interface State {
@@ -34,19 +31,19 @@ export class ScannerScreen extends Component<NavigationScreenProps, State> {
       cameraPermission: PermissionState.Requesting,
       codeScanned: false,
       currentAction: undefined,
-      windowWidth: Dimensions.get("window").width
+      windowWidth: Dimensions.get("window").width,
     };
   }
 
   public static navigationOptions = {
-    title: "Scan QR-kode"
+    title: "Scan QR-kode",
   };
 
   public async componentDidMount() {
     const { status } = await Permissions.askAsync(Permissions.CAMERA);
     this.setState({
       cameraPermission:
-        status === "granted" ? PermissionState.Granted : PermissionState.Denied
+        status === "granted" ? PermissionState.Granted : PermissionState.Denied,
     });
   }
 
@@ -62,7 +59,7 @@ export class ScannerScreen extends Component<NavigationScreenProps, State> {
             alignContent: "center",
             flex: 1,
             justifyContent: "center",
-            paddingHorizontal: 20
+            paddingHorizontal: 20,
           }}
         >
           <Text>
@@ -84,7 +81,7 @@ export class ScannerScreen extends Component<NavigationScreenProps, State> {
           style={{
             alignItems: "center",
             flex: 1,
-            justifyContent: "center"
+            justifyContent: "center",
           }}
         >
           <BarCodeScanner
@@ -92,7 +89,7 @@ export class ScannerScreen extends Component<NavigationScreenProps, State> {
             onBarCodeScanned={this.handleBarCodeScanned}
             style={{
               height: roundedViewfinderSize,
-              width: roundedViewfinderSize
+              width: roundedViewfinderSize,
             }}
           />
         </View>
@@ -101,7 +98,7 @@ export class ScannerScreen extends Component<NavigationScreenProps, State> {
             fontSize: 20,
             marginBottom: 10,
             marginTop: 10,
-            textAlign: "center"
+            textAlign: "center",
           }}
         >
           {this.getText(this.state.currentAction)}
@@ -110,7 +107,7 @@ export class ScannerScreen extends Component<NavigationScreenProps, State> {
           style={{
             marginBottom: ifIphoneX(50, 30),
             marginTop: 10,
-            paddingHorizontal: 20
+            paddingHorizontal: 20,
           }}
         >
           <SlideButton
@@ -132,7 +129,7 @@ export class ScannerScreen extends Component<NavigationScreenProps, State> {
 
     this.setState({
       codeScanned: false,
-      currentAction: undefined
+      currentAction: undefined,
     });
 
     this.props.navigation.goBack();
@@ -142,7 +139,7 @@ export class ScannerScreen extends Component<NavigationScreenProps, State> {
     const action = QrCodeParser.parseCodeValue(data);
     this.setState({
       codeScanned: true,
-      currentAction: action
+      currentAction: action,
     });
   };
 
