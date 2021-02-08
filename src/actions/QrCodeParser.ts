@@ -14,7 +14,6 @@ export class QrCodeParser {
     const actionString = actionAndHash[0];
     const hash = actionAndHash[1];
 
-    // TODO: Implement actual hash check.
     if (hash !== "1234567890") {
       return undefined;
     }
