@@ -21,6 +21,9 @@
     "tilføj",
     "ændres"
   ],
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true
+  },
   "editor.formatOnSave": true,
   "editor.tabSize": 2,
   "typescript.tsdk": "node_modules/typescript/lib"
