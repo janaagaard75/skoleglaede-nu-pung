@@ -5,7 +5,7 @@ import { BrokeScreen } from "./BrokeScreen";
 import { MainScreen } from "./MainScreen";
 import { ResetScreen } from "./ResetScreen";
 import { ScannerScreen } from "./ScannerScreen";
-import { TransferScreen } from "./TranferScreen";
+import { TransferScreen } from "./TransferScreen";
 
 const mainNavigator = createStackNavigator({
   MainScreen: {
