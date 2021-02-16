@@ -1,16 +1,14 @@
 import * as React from "react";
 import { Component } from "react";
+import { Text, View } from "react-native";
 import { ifIphoneX } from "react-native-iphone-x-helper";
 import { NavigationScreenProps } from "react-navigation";
-import { Text } from "react-native";
-import { View } from "react-native";
-
 import { SlideButton } from "./SlideButton";
 import { Wallet } from "./Wallet";
 
 export class BrokeScreen extends Component<NavigationScreenProps> {
-  constructor(props: NavigationScreenProps, context?: any) {
-    super(props, context);
+  constructor(props: NavigationScreenProps) {
+    super(props);
   }
 
   public static navigationOptions = {
@@ -36,7 +34,7 @@ export class BrokeScreen extends Component<NavigationScreenProps> {
               fontSize: 16
             }}
           >
-            Nultil din konto til 0,00 kroner? Din opsparing ændres ikke.
+            Nulstil din konto til 0,00 kroner? Din opsparing ændres ikke.
           </Text>
           <Text
             style={{
